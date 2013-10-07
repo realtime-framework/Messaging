@@ -32,3 +32,8 @@ The Realtime® Cloud Messaging starting guide is available [here](http://messagi
 
 ## Documentation
 The complete Realtime® Cloud Messaging library reference documentation is available [here](http://framework.realtime.co/messaging/#documentation)
+
+## License
+Copyright 2013, Realtime.co.
+
+Licensed under the MIT license: [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
