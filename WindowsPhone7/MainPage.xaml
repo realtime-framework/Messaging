@@ -1,0 +1,89 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Ibt.Ortc.Demo.Mobile.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Ortc WP7 API" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Ortc Client" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="30" />
+                <RowDefinition MaxHeight="60"/>
+                <RowDefinition />
+                <RowDefinition MaxHeight="60"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="100"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.ColumnSpan="2" Grid.Row="0" x:Name="textBlockConnectionStatus" Text="Disconnected" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Channel:" VerticalAlignment="Center" />
+            <TextBox FontSize="18" TextAlignment="Left" Grid.Row="1" Grid.Column="1" x:Name="textBoxChannel" Text="MyChannel" />
+            <ScrollViewer Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <TextBlock  x:Name="textBlockLog" TextWrapping="Wrap" />
+            </ScrollViewer>
+            
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Message:" VerticalAlignment="Center" />
+            <TextBox FontSize="18" TextAlignment="Left" Grid.Row="3" Grid.Column="1" x:Name="textBoxMessage" Text="hello from wp7" />
+            <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button FontSize="18" Grid.Row="0" Grid.Column="0" Content="Subscribe" Click="Button_Click_3" />
+                <Button FontSize="18" Grid.Row="0" Grid.Column="1" Content="Unsubscribe" Click="Button_Click_5" />
+                <Button FontSize="18" Grid.Row="0" Grid.Column="2" Content="Send" Click="Button_Click_4" />
+                
+                <Button FontSize="18" Grid.Row="1" Grid.Column="0" Content="Connect" Click="Button_Click" />
+                <Button FontSize="18" Grid.Row="1" Grid.Column="1" Content="Disconnect" Click="Button_Click_1" />
+                <Button FontSize="18" Grid.Row="1" Grid.Column="2" Content="Clear" Click="Button_Click_2" />
+
+                <Button FontSize="18" Grid.Row="2" Grid.Column="0" Content="Presence" Click="Button_Click_6" />
+                <Button FontSize="18" Grid.Row="2" Grid.Column="1" Content="Enable P."  />
+                <Button FontSize="18" Grid.Row="2" Grid.Column="2" Content="Disable P." />
+            </Grid>  
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

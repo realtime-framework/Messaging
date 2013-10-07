@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.1
+apiversion: 2
+description: My module
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2013 by Your Company
+
+
+# these should not be edited
+name: ORTC
+moduleid: co.realtime.ortc
+guid: 17256940-2e42-41b1-a393-6395b6b61597
+platform: android
+minsdk: 3.0.2.GA

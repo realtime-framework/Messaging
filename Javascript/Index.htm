@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Realtime Framework Pub/Sub Dev Console</title>
+	<link rel="stylesheet" media="all" href="Styles/default.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- jquery -->
+    <script type="text/javascript" src="Scripts/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="Scripts/dateFormat.js"></script>
+    <script type="text/javascript" src="Scripts/debugConsole.js"></script>
+
+    <!-- ORTC -->
+	<script type="text/javascript" src="http://dfdbz2tdq3k01.cloudfront.net/js/2.1.0/ortc.js"></script>
+</head>
+
+<body>
+    <h3>Realtime Framework Pub/Sub Dev Console</h3>
+
+<div id="Connection1_pHeader" class="collapsiblePanelTitle">   
+    Connection
+</div>
+
+<div id="Connection1_pnlConnection" class="divPanel">
+	
+    <div class="divPanelInt">
+        <table width="100%" cellspacing="8">
+            <tr>
+                <td colspan="2">
+                    Server
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input name="Connection1$txtUrl" type="text" value="http://ortc-developers.realtime.co/server/2.1" id="Connection1_txtUrl" style="width:97.5%;" />
+                </td>
+                <td>
+                    <input id="Connection1_chkIsCluster" type="checkbox" name="Connection1$chkIsCluster" checked="checked" /><label for="Connection1_chkIsCluster">Is Cluster</label>
+                </td>
+            </tr>
+            <tr>
+                <td width="40%">
+                    Authentication Token
+                </td>
+                <td width="30%">
+                    Application Key
+                </td>
+                <td width="30%" >
+                    Connection Metadata
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="Connection1$txtAuthToken" type="text" value="YOUR_AUTENTICATION_TOKEN" id="Connection1_txtAuthToken" style="width:95%;" />
+                </td>
+                <td>
+                    <input name="Connection1$txtApplicationKey" type="text" value="YOUR_APPLICATION_KEY" maxlength="6" id="Connection1_txtApplicationKey" style="width:94%;" />
+                </td>
+                <td colspan="4">
+                    <input name="Connection1$txtConnMeta" type="text" value="UserConnectionMetadata" id="Connection1_txtConnMeta" style="width:97%;" />
+                </td>
+            </tr>
+             <tr>
+                <td width="40%">
+                    Heartbeat Time
+                </td>
+                <td width="30%">
+                    Heartbeat Fails
+                </td>
+                <td width="30%">
+                    Heartbeat Active
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                    <input name="Connection1$txtHeartbeatTime" type="text" value="15" id="Connection1_txtHeartbeatTime" style="width:95%;" />
+                </td>
+                <td>
+                   <input name="Connection1$txtHeartbeatFails" type="text" value="3" id="Connection1_txtHeartbeatFails" style="width:94%;" />
+                </td>
+                <td >
+                   <span style="display:inline-block;width:97%;"><input id="Connection1_chkHeartbeatActive" type="checkbox" name="Connection1$chkHeartbeatActive" /></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Channel
+                </td>
+                <td>
+                    Announcement Subchannel
+                </td>            
+            </tr>            
+            <tr>
+                <td>
+                    <input name="Connection1$txtChannel" type="text" value="MyChannel" id="Connection1_txtChannel" style="width:95%;" />
+                </td>
+                <td>
+                    <input name="Connection1$txtAnnouncementSubChannel" type="text" id="Connection1_txtAnnouncementSubChannel" style="width:94%;" />
+                </td>
+               
+            </tr>
+            <tr>
+                <td colspan="5">
+                    Message
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <textarea name="Connection1$txtMessage" rows="3" cols="20" id="Connection1_txtMessage" style="width:99%;">
+This is the message.</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="Connection1_UpdatePanel2">
+		
+                            Is subscribed to the channel
+                            <input name="Connection1$txtChannelSubscribed" type="text" value="MyChannel" id="Connection1_txtChannelSubscribed" style="width:100px;" />
+                            ?
+                            &nbsp;
+                            <input type="Button" Value="Check" class="button" style="width:80px;" onclick="IsSubscribed();" />
+                        
+	</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Connection1_UpdatePanel1">
+		
+            <div style="float:left">
+                <table>
+                    <tr>
+                        <td style="width:110px">
+							<input type="Button" Value="Connect" class="button" style="width:100px;" onclick="Connect();" />                            
+                        </td>
+                        <td style="width:110px">
+							<input type="Button" Value="Subscribe" class="button" style="width:100px;" onclick="Subscribe();" />                            
+                        </td>
+                        <td style="width:110px">
+							<input type="Button" Value="Send" class="button" style="width:100px;" onclick="Send();" />                            
+                        </td>
+                        <td style="width:110px">
+							<input type="Button" Value="Unsubscribe" class="button" style="width:100px;" onclick="Unsubscribe();" />                            
+                        </td>
+                        <td style="width:110px">
+							<input type="Button" Value="Disconnect" class="button" style="width:100px;" onclick="Disconnect();" />                            
+                        </td>
+                        <td style="width:110px">
+							<input type="Button" Value="Presence" class="button" style="width:100px;" onclick="Presence();" />                            
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        
+	</div>
+
+</div>
+
+        <input type="hidden" name="Logger1$Collapsiblepanelextender1_ClientState" id="Logger1_Collapsiblepanelextender1_ClientState" />
+
+<div id="Logger1_pHeader" class="collapsiblePanelTitle">	    
+    Log
+</div>
+
+<div id="Logger1_pnlLogger" class="divPanel">
+	
+    <div class="divPanelInt">
+        <table width="100%">
+            <tr>
+                <td>
+                    <div id="logger" class="log"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Logger1_UpdatePanel1">
+		
+			<input type="Button" Value="Clear Log" class="button" style="width:100px;" onclick="ClearLog();" />           
+        
+	</div>
+
+</div>
+    
+
+</body>
+</html>

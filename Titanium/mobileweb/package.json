@@ -1,0 +1,9 @@
+{
+    "description": "This module allows to integrate ORTC service with Titanium Mobile applications.", 
+    "directories": {
+        "lib": "./src"
+    }, 
+    "main": "ORTCM", 
+    "name": "ORTCM", 
+    "version": "1.0"
+}

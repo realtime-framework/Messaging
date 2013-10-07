@@ -1,0 +1,184 @@
+<h1>ORTC Module</h1>
+<h2>Description</h2>
+<p>This module allows to integrate ORTC service with Titanium Mobile applications.</p>
+<p>The ORTC (Open Real-Time Connectivity) was developed to add a layer of abstraction to real-time full-duplex web communications platforms by making real-time web applications independent of those platforms.</p>
+<p>ORTC provides a standard software API (Application Programming Interface) for sending and receiving data in real-time over the web.</p>
+<p>Requirements: Android &lt;= 2.3.3</p>
+<h2>Installation</h2>
+<p>For information how to use Titanium Modules, please follow the guide <a href="http://wiki.appcelerator.org/display/tis/Using+Titanium+Modules">here</a>.</p>
+<h2>Accessing the ORTC Module</h2>
+<p>To access this module from JavaScript, you would do the following:</p>
+<pre><code>var ORTC = require("co.realtime.ortc");
+</code></pre>
+<p>The ORTC variable is a reference to the Module object.<br />
+</p>
+<h2>Reference</h2>
+<h3>Properties</h3>
+<h4>clusterUrl</h4>
+<p>The cluster server URL</p>
+<p>Example:</p>
+<pre><code>ORTC.clusterUrl = 'http://ortc-developers.realtime.co/server/2.1';
+</code></pre>
+<h4>url</h4>
+<p>The server URL</p>
+<p>Example:</p>
+<pre><code>ORTC.url = 'http://ortc-developers-euwest1-S0001.realtime.co/server/2.1';
+</code></pre>
+<h4>connectionMetadata</h4>
+<p>The client connection metadata</p>
+<p>Example:</p>
+<pre><code>ORTC.connectionMetadata = 'Titanium Client';
+</code></pre>
+<h4>announcementSubchannel</h4>
+<p>The client announcement subchannel</p>
+<p>Example:</p>
+<pre><code>ORTC.announcementSubchannel = 'announcementSubchannel';
+</code></pre>
+<h4>sessionId (readonly)</h4>
+<p>The client session identifier</p>
+<p>Example:</p>
+<pre><code>alert(ORTC.sessionId);
+</code></pre>
+<h3>Events</h3>
+<h4>onException</h4>
+<p>Event fired whenever exception occurs.
+The event parameter passed on the callback function has defined following property:
+- <strong>info</strong> [string]: description of the exception</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onException', function(e) {  
+    alert('Exception: '+e.info);
+});
+</code></pre>
+<h4>onConnected</h4>
+<p>Event fired whenever module connects.</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onConnected', function(e) {
+    alert('Connected');
+});
+</code></pre>
+<h4>onDisconnected</h4>
+<p>Event fired whenever module disconnects.</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onDisconnected', function(e) {
+    alert('Disconnected');
+});
+</code></pre>
+<h4>onReconnected</h4>
+<p>Event fired whenever module reconnects.</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onReconnected', function(e) {
+    alert('Reconnected');
+});
+</code></pre>
+<h4>onReconnecting</h4>
+<p>Event fired whenever module connects.</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onReconnecting', function(e) {
+    alert('Reconnecting');
+});
+</code></pre>
+<h4>onSubscribed</h4>
+<p>Event fired when module subscribes to a channel.
+The event parameter passed on the callback function has defined following property:
+- <strong>channel</strong> [string]: the channel name</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onSubscribed', function(e) { 
+    alert('Subscribed to channel: '+e.channel);
+});
+</code></pre>
+<h4>onUnsubscribed</h4>
+<p>Event fired when module unsubscribes from a channel.
+The event parameter passed on the callback function has defined following property:
+- <strong>channel</strong> [string]: the channel name</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onUnsubscribed', function(e) { 
+    alert('Unsubscribed from: '+e.channel);
+});
+</code></pre>
+<h4>onMessage</h4>
+<p>Event fired when module receives a message on the subscribed channel.
+The event parameter passed on the callback function has defined following properties:
+- <strong>channel</strong> [string]: the channel name
+- <strong>message</strong> [string]: the message</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onMessage', function(e) {
+    alert('(Channel: '+e.channel+') Message received: '+e.message);
+});
+</code></pre>
+<h4>onPresence</h4>
+<p>Event fired as a response for presence request.
+The event parameter passed on the callback function has defined following properties:
+- <strong>channel</strong> [string]: the channel name
+- <strong>result</strong> [string]: JSON string containing the presence response
+- <strong>error</strong> [string]: the error description, if occurs, otherwise empty string</p>
+<p>Example:</p>
+<pre><code>ORTC.addEventListener('onPresence', function(e) {
+    if (e.error != ""){
+        alert('(Channel: '+e.channel+') Presence error: ' + e.error);
+    } else {
+        alert('(Channel: '+e.channel+') Presence: '+e.result);
+    }
+});
+</code></pre>
+<h3>Methods</h3>
+<h4>connect</h4>
+<p>Connects the client using the supplied application key and authentication token.
+Parameters:
+- <strong>application_key</strong> [string]: Your ORTC application key.
+- <strong>authentication_token</strong> [string]: - Your ORTC authentication token (this parameter is optional).</p>
+<p>Example:</p>
+<pre><code>ORTC.connect('yourApplicationKey');
+or
+ORTC.connect('yourApplicationKey', 'yourAuthenticationToken');
+</code></pre>
+<h4>disconnect</h4>
+<p>Disconnects the client.</p>
+<p>Example:</p>
+<pre><code>ORTC.disconnect();
+</code></pre>
+<h4>subscribe</h4>
+<p>Subscribes to the supplied channel to receive messages sent to it.
+Parameters:
+- <strong>channel</strong> [string]: The channel name.
+- <strong>subscribe_on_reconnect</strong> [bool] -Indicates whether the client should subscribe to the channel when reconnected (if it was previously subscribed when connected).</p>
+<p>Example:</p>
+<pre><code>ORTC.subscribe('yellow', true);
+</code></pre>
+<h4>unsubscribe</h4>
+<p>Unsubscribes from the supplied channel to stop receiving messages sent to it.
+Parameter:
+- <strong>channel</strong> [string]: The channel name.</p>
+<p>Example:</p>
+<pre><code>ORTC.unsubscribe('yellow');
+</code></pre>
+<h4>send</h4>
+<p>Sends the supplied message to the supplied channel.
+Parameters:
+- <strong>channel</strong> [string]: The channel name.
+- <strong>message</strong> [string]: The message to send.</p>
+<p>Example:</p>
+<pre><code>ORTC.send('yellow', 'This is the message');
+</code></pre>
+<h4>isSubscribed</h4>
+<p>Returns boolean value which indicates whether the client is subscribed to the supplied channel.
+Parameter:
+- <strong>channel</strong> [string]: The channel name.</p>
+<p>Example:</p>
+<pre><code>alert(ORTC.isSubscribed('yellow'));
+</code></pre>
+<h4>isConnected</h4>
+<p>Returns boolean value which indicates whether the client is connected. </p>
+<p>Example:</p>
+<pre><code>alert(ORTC.isConnected());
+</code></pre>
+<h4>presence</h4>
+<p>Gets a dictionary indicating the subscriptions number in the specified channel and if active the first 100 unique metadata.
+Parameter: 
+- <strong>channel</strong> [string]: The channel name with presence data active.</p>
+<p>Example:</p>
+<pre><code>ORTC.presence('yellow');
+</code></pre>
+<h2>Usage</h2>
+<p>Please see the examples files included in the directory 'example'</p>
+<h2>Author</h2>
+<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#111;&#114;&#116;&#99;&#64;&#114;&#101;&#97;&#108;&#116;&#105;&#109;&#101;&#46;&#99;&#111;">&#111;&#114;&#116;&#99;&#64;&#114;&#101;&#97;&#108;&#116;&#105;&#109;&#101;&#46;&#99;&#111;</a> </p>

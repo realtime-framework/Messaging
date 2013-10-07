@@ -1,0 +1,61 @@
+<html ng-app>
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script type="text/javascript" src="http://dfdbz2tdq3k01.cloudfront.net/js/2.1.0/ortc.js"></script>
+
+<script type="text/javascript">   
+    function ChatCtrl($scope) {
+        var channel = "mychat"
+        var realtimeClient = null;
+        $scope.messages = [];   
+
+        loadOrtcFactory(IbtRealTimeSJType, function (factory, error) {
+           if (error != null) {
+               alert("Factory error: " + error.message);
+           } else {
+               if (factory != null) {
+                    realtimeClient = factory.createClient();
+                    realtimeClient.setClusterUrl('http://ortc-developers.realtime.co/server/2.1/');
+                    
+                    realtimeClient.onConnected = function (ortc) {
+                       realtimeClient.subscribe(channel, true, function (ortc, channel, message) { 
+                            $scope.messages.push(message);
+                            $scope.$apply();
+                       });
+                    };
+                    
+                    realtimeClient.onException = function (ortc, exception) {
+                        console.error(exception);
+                    };
+                    
+                    realtimeClient.connect('[INSERT_YOUR_APPKEY_HERE]', 'myAuthenticationToken');
+                }
+            }
+        }); 
+
+        $scope.sendMessage = function() {
+            if(realtimeClient){
+                realtimeClient.send(channel,$scope.messageText);
+                $scope.messageText = "";
+            }            
+        };
+    }
+</script>
+
+</head>
+
+<body>
+
+<div ng-controller="ChatCtrl">
+    <ul>
+        <li ng-repeat="message in messages">{{message}}</li>
+    </ul>
+
+    <form ng-submit="sendMessage()">
+        <input type="text" ng-model="messageText" placeholder="Type your message here" />
+        <input type="submit" value="Send" />
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Ibt.Ortc.Demo.SilverlightApplication.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="568" d:DesignWidth="983" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" VerticalContentAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Left" HorizontalAlignment="Left">
+
+    <Grid x:Name="LayoutRoot" Background="White" Width="948" Height="536" UseLayoutRounding="True" ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="358*" />
+            <RowDefinition Height="178" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="435" />
+            <ColumnDefinition Width="513*" />
+        </Grid.ColumnDefinitions>
+        
+        
+        <Button Content="Connect" Height="23" HorizontalAlignment="Left" Margin="22,308,0,0" Name="btnConnect" VerticalAlignment="Top" Width="88" Click="btnConnect_Click" Grid.Column="1" />
+        <Button Content="Subscribe" Height="23" HorizontalAlignment="Left" Margin="117,308,0,0" Name="btnSubscribe" VerticalAlignment="Top" Width="88" Click="btnSubscribe_Click" Grid.Column="1" />
+        <Button Content="Send" Height="23" HorizontalAlignment="Left" Margin="212,308,0,0" Name="btnSend" VerticalAlignment="Top" Width="88" Click="btnSend_Click" Grid.Column="1" />
+        <Button Content="Unsubscribe" Height="23" Margin="307,308,0,0" Name="btnUnsubscribe" VerticalAlignment="Top" Click="btnUnsubscribe_Click" Width="88" HorizontalAlignment="Left" Grid.Column="1" />
+        <Button Content="Disconnect" Height="23" HorizontalAlignment="Left" Margin="401,308,0,0" Name="btnDisconnect" VerticalAlignment="Top" Width="88" Click="btnDisconnect_Click" Grid.Column="1" />        
+        
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="22,34,0,0" Name="txtConnectionUrl" VerticalAlignment="Top" Width="318" Grid.Column="1" />
+        <sdk:Label Content="Server" Height="28" HorizontalAlignment="Left" Margin="22,11,0,0" Name="label2" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="22,91,0,0" Name="txtConnectionAuthToken" VerticalAlignment="Top" Width="197" Grid.Column="1" />
+        <sdk:Label Content="Authentication Token" Height="28" HorizontalAlignment="Left" Margin="22,68,0,0" Name="label3" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="230,91,0,0" Name="txtConnectionAppKey" VerticalAlignment="Top" Width="111" Grid.Column="1" />
+        <sdk:Label Content="Application Key" Height="28" HorizontalAlignment="Left" Margin="230,68,0,0" Name="label4" VerticalAlignment="Top" Width="110" Grid.Column="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="351,91,0,0" Name="txtConnectionConnMeta" VerticalAlignment="Top" Width="140" Grid.Column="1" />
+        <sdk:Label Content="Connection Metadata" Height="28" HorizontalAlignment="Left" Margin="351,68,0,0" Name="label5" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="22,145,0,0" Name="txtConnectionChannel" VerticalAlignment="Top" Width="197" Grid.Column="1" />
+        <sdk:Label Content="Channel" Height="28" HorizontalAlignment="Left" Margin="22,122,0,0" Name="label6" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="230,145,0,0" Name="txtConnectionAnnouncementSubChannel" VerticalAlignment="Top" Width="260" Grid.Column="1" />
+        <sdk:Label Content="Announcement Subchannel" Height="28" HorizontalAlignment="Left" Margin="230,122,0,0" Name="label7" VerticalAlignment="Top" Width="260" Grid.Column="1" />
+        <TextBox TextWrapping="Wrap" Height="60" HorizontalAlignment="Left" Margin="22,202,0,0" Name="txtConnectionMessage" VerticalAlignment="Top" Width="467" Grid.Column="1" />
+        <sdk:Label Content="Message" Height="28" HorizontalAlignment="Left" Margin="22,179,0,0" Name="label8" VerticalAlignment="Top" Width="312" Grid.Column="1" />
+        <Button Content="Post" Height="23" HorizontalAlignment="Left" Margin="12,308,0,0" Name="btnPostAuthentication" VerticalAlignment="Top" Width="88" Click="btnPostAuthentication_Click" />
+        <CheckBox Content="Is Cluster" Height="16" HorizontalAlignment="Left" Margin="351,37,0,0" Name="chkConnectionIsCluster" VerticalAlignment="Top" Grid.Column="1" />
+        <sdk:Label Content="Log" Height="19" HorizontalAlignment="Left" Margin="22,27,0,0" Name="label1" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1" />
+        <Button Content="Clear Log" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="401,13,0,0" Name="btnClearLog" VerticalAlignment="Top" Width="88" Grid.Row="1" Click="btnClearLog_Click" />
+        
+        <ScrollViewer Height="124" HorizontalAlignment="Left" Margin="22,52,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="467" Grid.Column="1" Grid.Row="1">
+            <TextBlock Name="txtLog" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" />
+        </ScrollViewer>
+
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="12,34,0,0" Name="txtPostUrl" VerticalAlignment="Top" Width="324" />
+        <sdk:Label Content="Server" Height="28" HorizontalAlignment="Left" Margin="12,11,0,0" Name="label9" VerticalAlignment="Top" Width="120" />
+        <CheckBox Content="Is Cluster" Height="16" HorizontalAlignment="Right" Margin="0,37,17,0" Name="chkPostIsCluster" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="12,91,0,0" Name="txtPostAuthToken" VerticalAlignment="Top" Width="324" />
+        <sdk:Label Content="Authentication Token" Height="28" HorizontalAlignment="Left" Margin="12,68,0,0" Name="label10" VerticalAlignment="Top" Width="120" />
+        <CheckBox Content="Is Private" Height="16" HorizontalAlignment="Right" Margin="0,94,18,0" Name="chkPostIsPrivate" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="12,145,0,0" Name="txtPostAppKey" VerticalAlignment="Top" Width="133" />
+        <sdk:Label Content="Application Key" Height="28" HorizontalAlignment="Left" Margin="12,122,0,0" Name="label11" VerticalAlignment="Top" Width="133" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="155,0,0,177" Name="txtPostPrivateKey" VerticalAlignment="Bottom" Width="154" />
+        <sdk:Label Content="Private Key" Height="28" HorizontalAlignment="Left" Margin="155,122,0,0" Name="label12" VerticalAlignment="Top" Width="175" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="319,145,0,0" Name="txtPostTtl" VerticalAlignment="Top" Width="99" />
+        <sdk:Label Content="TTL" Height="28" HorizontalAlignment="Left" Margin="319,122,0,0" Name="label13" VerticalAlignment="Top" Width="98" />
+
+        <sdk:Label Content="Channels" Height="28" HorizontalAlignment="Left" Margin="12,179,0,0" Name="label14" VerticalAlignment="Top" Width="133" />
+        <sdk:Label Content="Permissions" Height="28" HorizontalAlignment="Left" Margin="319,179,0,0" Name="label15" VerticalAlignment="Top" Width="98" />
+            <TextBox Name="txtPostChannels" TextWrapping="Wrap" VerticalAlignment="Top" Height="95" AcceptsReturn="True" Text="" Margin="12,202,126,0" />
+            <TextBox Name="txtPostPermissions" TextWrapping="Wrap" VerticalAlignment="Top" Height="95" AcceptsReturn="True" Margin="318,202,17,0" />
+        <sdk:Label Content="Is subscribed to the channel" Height="28" HorizontalAlignment="Left" Margin="22,279,0,0" Name="label16" VerticalAlignment="Top" Width="161" Grid.Column="1" />
+        <sdk:Label Content="?" Height="28" HorizontalAlignment="Left" Margin="340,279,0,0" Name="label17" VerticalAlignment="Top" Width="31" Grid.Column="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="189,274,0,0" Name="txtConnectionChannelIsSubscribed" VerticalAlignment="Top" Width="145" Grid.Column="1" />
+        <Button Content="Check" Height="23" HorizontalAlignment="Left" Margin="356,274,0,0" Name="btnIsSubscribed" VerticalAlignment="Top" Width="88" Grid.Column="1" Click="btnIsSubscribed_Click" />
+        
+        <Button x:Name="btnPresence" Content="Presence" Height="23" HorizontalAlignment="Left" Margin="22,335,0,0" VerticalAlignment="Top" Width="88" Grid.Column="1" Click="btnPresence_Click" />
+        <Button x:Name="btnEnablePresence" Content="Enable Presence" Height="23" HorizontalAlignment="Left" Margin="117,335,0,0" VerticalAlignment="Top" Width="183" Grid.Column="1" Click="btnEnablePresence_Click" />
+        <Button x:Name="btnDisablePresence" Content="Disable Presence" Height="23" HorizontalAlignment="Left" Margin="308,335,0,0" VerticalAlignment="Top" Width="183" Grid.Column="1" Click="btnDisablePresence_Click" />
+    </Grid>
+</UserControl>

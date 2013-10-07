@@ -1,0 +1,135 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	font-family: Arial, Verdana;
+	font-size: 14px;
+	padding: 10px 0 0 10px;
+	color: rgb(60,60,60);
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+    background-color: #F0F0F0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+.gigantic {
+	font-size: 123px;
+	line-height: 132px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 76px;
+	line-height: 84px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 47px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 29px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	font-size: 25px;
+	line-height: 30px;
+}
+
+.log 
+{
+    height: 170px;
+    overflow: scroll;
+}
+
+#output {
+    border-color: grey;
+    overflow:auto;
+    white-space:pre-wrap;
+}
+
+#input {
+    vertical-align: text-top;
+    outline-style: none;
+    outline-width: 0px;
+    outline-color: -moz-use-text-color;
+}
+
+.divPerms
+{
+    margin: 10px 0 10px 0;
+}
+
+.divPanel
+{
+    float: left;
+    width: 98%;
+}
+
+.divPanelInt
+{
+    padding: 5px;
+    margin: 0 0 10px 0;
+    border: 1px solid black;
+    border-top: none;
+    float: left;
+    width: 98%;
+}
+
+.divPanelTitle
+{
+    padding: 5px;
+    margin: 10px 0 0 0;
+    border: 1px solid black;
+    border-bottom: none;
+    font-weight: bold;
+    float: left;
+    width: 98%;
+}
+
+.gridViewRow
+{
+    border: 1px solid black;
+}
+
+.gridViewRowAlternate
+{
+    border: 1px solid black;
+}
+
+.button 
+{
+    cursor: pointer;
+}
+
+input[type="checkbox"]
+{
+    margin-right: 5px;
+}
+
+.collapsiblePanelTitle 
+{
+    padding: 5px;
+    margin: 10px 0 0 0;
+    border: 1px solid black;
+    font-weight: bold;
+    width: 96%;
+    cursor: pointer;
+}

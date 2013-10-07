@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   width="873" height="543" minWidth="955" minHeight="600"
+			   creationComplete="creationCompleteHandler(event)">
+	
+	<fx:Script>
+		<![CDATA[
+			import ibt.ortc.plugin.OrtcClient;
+			
+			import mx.effects.IAbstractEffect;
+			import mx.events.FlexEvent;
+			import mx.utils.StringUtil;
+			
+			import flash.system.Security;
+			
+			private var ortcClient:OrtcClient = null;
+			
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				populatePermissions();
+				
+				ortcClient = new OrtcClient();
+				
+				ortcClient.onConnected = function (ortc:OrtcClient):void
+				{
+					log(StringUtil.substitute("Connected to: {0}...", ortc.url));
+				};
+				
+				ortcClient.onDisconnected = function (ortc:OrtcClient):void
+				{
+					log("Disconnected");
+				};
+				
+				ortcClient.onSubscribed = function (ortc:OrtcClient, channel:String):void
+				{
+					log(StringUtil.substitute("Subscribed to: {0}", channel));
+				};
+				
+				ortcClient.onUnsubscribed = function (ortc:OrtcClient, channel:String):void
+				{
+					log(StringUtil.substitute("Unsubscribed from: {0}", channel));
+				};
+				
+				ortcClient.onException = function (ortc:OrtcClient, error:String):void
+				{
+					log(StringUtil.substitute("Exception: {0}", error));
+				};
+				
+				ortcClient.onReconnecting = function (ortc:OrtcClient):void
+				{
+					log(StringUtil.substitute("Reconnecting to: {0}...", txtServer.text));
+				};
+				
+				ortcClient.onReconnected = function (ortc:OrtcClient):void
+				{
+					log(StringUtil.substitute("Reconnected to: {0}...", ortc.url));
+				};
+			}
+			
+			private function populatePermissions():void
+			{
+				txtPostChannels.text = "MyChannel";
+				
+				txtPostPermissions.text += "w";
+			}
+			
+			private function postPermissions():void
+			{
+				log("Posting permissions...");
+				
+				var channelPermissions:Dictionary = new Dictionary();
+				
+				// Get permissions
+				var channels:Array = txtPostChannels.text.split("\n");
+				var permissions:Array = txtPostPermissions.text.split("\n");
+				
+				for (var i:int = 0; i < channels.length; i++) {
+					if (channelPermissions[channels[i]] == null) {
+						try {
+							channelPermissions[channels[i]] = permissions[i];
+						}
+						catch (ex:Error) {
+							channelPermissions[channels[i]] = "r";
+						}
+					}
+				}
+				
+				try {
+					ortcClient.saveAuthentication(txtPostServer.text, chkPostIsCluster.selected, txtPostAuthToken.text, chkPostAuthTokenIsPrivate.selected, txtPostAppKey.text, int(txtPostTtl.text), txtPostPrivateKey.text, channelPermissions, function (result:Boolean):void
+					{
+						if (result) {
+							log("Permissions correctly posted");
+						}
+						else {
+							log("Error posting permissions");
+						}
+					});
+				}
+				catch (ex:Error) {
+					log(StringUtil.substitute("Post permissions exception: {0}", ex.message));
+				}
+			}
+			
+			private function connect():void
+			{
+				if (chkIsCluster.selected) {
+					ortcClient.clusterUrl = txtServer.text;
+				}
+				else {
+					ortcClient.url = txtServer.text;
+				}
+				
+				ortcClient.connectionMetadata = txtConnMeta.text;
+				
+				log(StringUtil.substitute("Connecting to: {0}...", txtServer.text));
+				
+				ortcClient.connect(txtAppKey.text, txtAuthToken.text);
+			}
+			
+			private function presence():void
+			{
+				log("Getting presence data...");
+				
+				ortcClient.presence(txtServer.text,chkIsCluster.selected,txtAppKey.text,txtAuthToken.text,txtChannel.text,function(error:String,data:Object):void {
+					if(error != null)
+					{
+						log("Error getting presence data : " + error);	
+					}
+					else
+					{
+						if(data == null)
+						{
+							log("Unable to get presence data");
+						}
+						else
+						{							
+							for(var metadataIndex:String in data["metadata"]){
+								log(metadataIndex + " - " + data["metadata"][metadataIndex]);	
+							}
+							log("Subscriptions : " + data["subscriptions"]);	
+						}
+					}
+				});
+			}
+			
+			private function enablePresence():void
+			{
+				log("Enabling presence data...");
+				
+				ortcClient.enablePresence(txtServer.text,chkIsCluster.selected,txtAppKey.text,txtPostPrivateKey.text,txtChannel.text,false,function(error:String,result:String):void {
+					if(error != null)
+					{
+						log("Error enabling presence data : " + error);	
+					}
+					else
+					{
+						log(result);	
+					}
+				});
+			}
+			
+			private function disablePresence():void
+			{
+				log("Disabling presence data...");
+				
+				ortcClient.disablePresence(txtServer.text,chkIsCluster.selected,txtAppKey.text,txtPostPrivateKey.text,txtChannel.text,function(error:String,result:String):void {
+					if(error != null)
+					{
+						log("Error disabling presence data : " + error);	
+					}
+					else
+					{
+						log(result);	
+					}
+				});
+			}
+			
+			private function disconnect():void
+			{
+				log("Disconnecting...");
+				
+				ortcClient.disconnect();
+			}
+			
+			private function subscribe():void
+			{
+				log("Subscribing...");
+				
+				ortcClient.subscribe(txtChannel.text, true, function (ortc:OrtcClient, channel:String, message:String):void
+				{
+					log(StringUtil.substitute("Received at: {0}: {1}", channel, message));
+				});
+			}
+			
+			private function unsubscribe():void
+			{
+				log("Unsubscribing...");
+				
+				ortcClient.unsubscribe(txtChannel.text);
+			}
+			
+			private function send():void
+			{
+				log(StringUtil.substitute("Sending: {0} to channel {1}", txtMessage.text, txtChannel.text));
+				
+				ortcClient.send(txtChannel.text, txtMessage.text);
+			}
+			
+			private function clearLog():void
+			{
+				txtLog.text = "";
+			}
+			
+			private function log(text:String):void 
+			{
+				var dateNow:Date = new Date();
+				var hr:Number = dateNow.getHours();
+				var mnt:Number = dateNow.getMinutes();
+				var sec:Number = dateNow.getSeconds();
+				
+				txtLog.text = (hr < 10 ? "0" + hr : hr) + ':' + (mnt < 10 ? "0" + mnt : mnt) + ':' + (sec < 10 ? "0" + sec : sec) + ' - ' + text + (txtLog.text != "" ? "\n" : "") + txtLog.text;
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:BorderContainer x="411" y="10" width="451" height="266" backgroundColor="#C6DCE3">
+		<s:Label x="11" y="30" text="Server"/>
+		<s:TextInput id="txtServer" x="10" y="46" width="343" text="http://ortc-developers.realtime.co/server/2.1"/>
+		<s:Label x="12" y="79" text="Authentication Token"/>
+		<s:TextInput id="txtAuthToken" x="11" y="94" width="172" text="YOUR_AUTHENTICATION_TOKEN"/>
+		<s:Label x="193" y="79" text="Application Key"/>
+		<s:TextInput id="txtAppKey" x="191" y="94" width="101" text="YOUR_APPLICATION_KEY"/>
+		<s:Label x="299" y="79" text="Connection Metadata"/>
+		<s:TextInput id="txtConnMeta" x="300" y="94" width="137" text="UserConnectionMetadata"/>
+		<s:Label x="11" y="125" text="Channel"/>
+		<s:TextInput id="txtChannel" x="11" y="141" width="172" text="MyChannel"/>
+		<s:Label x="193" y="125" text="Announcement Subchannel"/>
+		<s:TextInput id="txtAnnouncementSubChannel" x="191" y="141" width="246"/>
+		<s:Label x="11" y="175" text="Message"/>
+		<s:TextArea id="txtMessage" x="11" y="190" width="426" height="65"
+					text="Flex Usage API message."/>
+		<s:CheckBox id="chkIsCluster" x="362" y="48" label="Is Cluster" selected="true"/>
+		<s:Label x="10" y="10" fontWeight="bold" text="Connection"/>
+	</s:BorderContainer>
+	<s:Button id="btnConnect" x="411" y="284" width="85" label="Connect" click="connect()"/>
+	<s:Button id="btnPresence" x="411" y="313" width="85" label="Presence" click="presence()"/>
+	<s:Button id="btnEnablePresence" x="504" y="313" width="165" label="Enable Presence" click="enablePresence()"/>
+	<s:Button id="btnDisablePresence" x="675" y="313" width="186" label="Disable Presence" click="disablePresence()"/>
+	<s:Button id="btnSubscribe" x="504" y="284" width="85" label="Subscribe" click="subscribe()"/>
+	<s:Button id="btnUnsubscribe" x="675" y="284" width="95" label="Unsubscribe"
+			  click="unsubscribe()"/>
+	<s:Button id="btnSend" x="597" y="284" label="Send" click="send()"/>
+	<s:Button id="btnDisconnect" x="778" y="284" width="85" label="Disconnect" click="disconnect()"/>
+	
+	<s:BorderContainer x="10" y="10" width="392" height="266" backgroundColor="#C6DCE3">
+		<s:Label x="10" y="10" fontWeight="bold" text="Post Authentication"/>
+		<s:Label x="11" y="30" text="Server"/>
+		<s:TextInput id="txtPostServer" x="10" y="46" width="292" text="http://ortc-developers.realtime.co/server/2.1"/>
+		<s:Label x="12" y="78" text="Authentication Token"/>
+		<s:CheckBox id="chkPostIsCluster" x="310" y="49" label="Is Cluster" selected="true"/>
+		<s:TextInput id="txtPostAuthToken" x="11" y="94" width="291" text="YOUR_AUTHENTICATION_TOKEN"/>
+		<s:CheckBox id="chkPostAuthTokenIsPrivate" x="310" y="96" label="Is Private" selected="false"/>
+		<s:Label x="12" y="126" text="Application Key"/>
+		<s:Label x="129" y="126" text="Private Key"/>
+		<s:Label x="276" y="126" text="TTL"/>
+		<s:TextInput id="txtPostPrivateKey" x="129" y="140" width="139" text="YOUR_APPLICATION_PRIVATE_KEY"/>
+		<s:TextInput id="txtPostAppKey" x="10" y="141" width="111" text="YOUR_APPLICATION_KEY"/>
+		<s:TextInput id="txtPostTtl" x="276" y="140" width="103" text="1400"/>
+		<s:Label x="10" y="175" text="Channels"/>
+		<s:Label x="276" y="175" text="Permissions"/>
+		<s:TextArea id="txtPostChannels" x="10" y="190" width="258" height="65"/>
+		<s:TextArea id="txtPostPermissions" x="276" y="190" width="104" height="65"/>
+	</s:BorderContainer>
+	<s:Button id="btnPost" x="10" y="284" width="85" label="Post" click="postPermissions()"/>
+	
+	<s:BorderContainer x="10" y="357" width="852" height="151" backgroundColor="#C6DCE3">
+		<s:TextArea id="txtLog" x="10" y="30" width="830" height="108" editable="false"/>
+		<s:Label x="13" y="10" fontWeight="bold" text="Log"/>
+	</s:BorderContainer>
+	<s:Button id="btnClearLog" x="10" y="516" width="85" label="Clear Log" click="clearLog()"/>
+	
+</s:Application>
