@@ -33,7 +33,7 @@ module ORTC
 		end
 		
 		def get_all
-			return @parts.to_s
+                  return @parts.join("")
 		end
 	end	
 	
