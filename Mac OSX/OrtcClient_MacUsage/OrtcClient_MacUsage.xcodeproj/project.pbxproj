@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A4D7BC01843A1F90084FCFD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4D7BBF1843A1F90084FCFD /* Cocoa.framework */; };
+		6A4D7BCA1843A1F90084FCFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D7BC81843A1F90084FCFD /* InfoPlist.strings */; };
+		6A4D7BCC1843A1F90084FCFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D7BCB1843A1F90084FCFD /* main.m */; };
+		6A4D7BD01843A1F90084FCFD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D7BCE1843A1F90084FCFD /* Credits.rtf */; };
+		6A4D7BD31843A1F90084FCFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D7BD21843A1F90084FCFD /* AppDelegate.m */; };
+		6A4D7BD81843A1F90084FCFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D7BD71843A1F90084FCFD /* Images.xcassets */; };
+		6A4D7BF71843A5530084FCFD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D7BF51843A5530084FCFD /* MasterViewController.m */; };
+		6A4D7BF81843A5530084FCFD /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D7BF61843A5530084FCFD /* MasterViewController.xib */; };
+		6A4D7BFE1843A6570084FCFD /* libOrtcClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4D7BFD1843A6570084FCFD /* libOrtcClient.a */; };
+		6A4D7C0F1843A6970084FCFD /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4D7C091843A65D0084FCFD /* SocketRocket.framework */; };
+		6A4D7C121843AA0C0084FCFD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D7C101843AA0C0084FCFD /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A4D7C061843A65D0084FCFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4D7BFF1843A65C0084FCFD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6B2082D1450F597009315AF;
+			remoteInfo = SocketRocket;
+		};
+		6A4D7C081843A65D0084FCFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4D7BFF1843A65C0084FCFD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F668C880153E91210044DBAC;
+			remoteInfo = SocketRocketOSX;
+		};
+		6A4D7C0A1843A65D0084FCFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4D7BFF1843A65C0084FCFD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6BDA802145900D200FE3253;
+			remoteInfo = SRWebSocketTests;
+		};
+		6A4D7C0C1843A65D0084FCFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4D7BFF1843A65C0084FCFD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F62417E314D52F3C003CE997;
+			remoteInfo = TestChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6A4D7BBC1843A1F90084FCFD /* OrtcClient_MacUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtcClient_MacUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4D7BBF1843A1F90084FCFD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6A4D7BC21843A1F90084FCFD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6A4D7BC31843A1F90084FCFD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6A4D7BC41843A1F90084FCFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6A4D7BC71843A1F90084FCFD /* OrtcClient_MacUsage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrtcClient_MacUsage-Info.plist"; sourceTree = "<group>"; };
+		6A4D7BC91843A1F90084FCFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6A4D7BCB1843A1F90084FCFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6A4D7BCD1843A1F90084FCFD /* OrtcClient_MacUsage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrtcClient_MacUsage-Prefix.pch"; sourceTree = "<group>"; };
+		6A4D7BCF1843A1F90084FCFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6A4D7BD11843A1F90084FCFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6A4D7BD21843A1F90084FCFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6A4D7BD71843A1F90084FCFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6A4D7BF41843A5530084FCFD /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		6A4D7BF51843A5530084FCFD /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		6A4D7BF61843A5530084FCFD /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		6A4D7BFB1843A6570084FCFD /* OrtcClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrtcClient.h; sourceTree = "<group>"; };
+		6A4D7BFC1843A6570084FCFD /* RealtimePushAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealtimePushAppDelegate.h; sourceTree = "<group>"; };
+		6A4D7BFD1843A6570084FCFD /* libOrtcClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOrtcClient.a; sourceTree = "<group>"; };
+		6A4D7BFF1843A65C0084FCFD /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = "OrtcClient_MacUsage/SocketRocket-master/SocketRocket.xcodeproj"; sourceTree = "<group>"; };
+		6A4D7C111843AA0C0084FCFD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A4D7BB91843A1F90084FCFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4D7C0F1843A6970084FCFD /* SocketRocket.framework in Frameworks */,
+				6A4D7BFE1843A6570084FCFD /* libOrtcClient.a in Frameworks */,
+				6A4D7BC01843A1F90084FCFD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A4D7BB31843A1F90084FCFD = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BFF1843A65C0084FCFD /* SocketRocket.xcodeproj */,
+				6A4D7BC51843A1F90084FCFD /* OrtcClient_MacUsage */,
+				6A4D7BBE1843A1F90084FCFD /* Frameworks */,
+				6A4D7BBD1843A1F90084FCFD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A4D7BBD1843A1F90084FCFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BBC1843A1F90084FCFD /* OrtcClient_MacUsage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A4D7BBE1843A1F90084FCFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BBF1843A1F90084FCFD /* Cocoa.framework */,
+				6A4D7BC11843A1F90084FCFD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A4D7BC11843A1F90084FCFD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BC21843A1F90084FCFD /* AppKit.framework */,
+				6A4D7BC31843A1F90084FCFD /* CoreData.framework */,
+				6A4D7BC41843A1F90084FCFD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6A4D7BC51843A1F90084FCFD /* OrtcClient_MacUsage */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BD11843A1F90084FCFD /* AppDelegate.h */,
+				6A4D7BD21843A1F90084FCFD /* AppDelegate.m */,
+				6A4D7C101843AA0C0084FCFD /* MainMenu.xib */,
+				6A4D7BF41843A5530084FCFD /* MasterViewController.h */,
+				6A4D7BF51843A5530084FCFD /* MasterViewController.m */,
+				6A4D7BF61843A5530084FCFD /* MasterViewController.xib */,
+				6A4D7BD71843A1F90084FCFD /* Images.xcassets */,
+				6A4D7BF91843A6570084FCFD /* libOrtcClient */,
+				6A4D7BC61843A1F90084FCFD /* Supporting Files */,
+			);
+			path = OrtcClient_MacUsage;
+			sourceTree = "<group>";
+		};
+		6A4D7BC61843A1F90084FCFD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BC71843A1F90084FCFD /* OrtcClient_MacUsage-Info.plist */,
+				6A4D7BC81843A1F90084FCFD /* InfoPlist.strings */,
+				6A4D7BCB1843A1F90084FCFD /* main.m */,
+				6A4D7BCD1843A1F90084FCFD /* OrtcClient_MacUsage-Prefix.pch */,
+				6A4D7BCE1843A1F90084FCFD /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A4D7BF91843A6570084FCFD /* libOrtcClient */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BFA1843A6570084FCFD /* include */,
+				6A4D7BFD1843A6570084FCFD /* libOrtcClient.a */,
+			);
+			path = libOrtcClient;
+			sourceTree = "<group>";
+		};
+		6A4D7BFA1843A6570084FCFD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7BFB1843A6570084FCFD /* OrtcClient.h */,
+				6A4D7BFC1843A6570084FCFD /* RealtimePushAppDelegate.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		6A4D7C001843A65C0084FCFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D7C071843A65D0084FCFD /* libSocketRocket.a */,
+				6A4D7C091843A65D0084FCFD /* SocketRocket.framework */,
+				6A4D7C0B1843A65D0084FCFD /* SRWebSocketTests.octest */,
+				6A4D7C0D1843A65D0084FCFD /* TestChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A4D7BBB1843A1F90084FCFD /* OrtcClient_MacUsage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4D7BED1843A1F90084FCFD /* Build configuration list for PBXNativeTarget "OrtcClient_MacUsage" */;
+			buildPhases = (
+				6A4D7BB81843A1F90084FCFD /* Sources */,
+				6A4D7BB91843A1F90084FCFD /* Frameworks */,
+				6A4D7BBA1843A1F90084FCFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrtcClient_MacUsage;
+			productName = OrtcClient_MacUsage;
+			productReference = 6A4D7BBC1843A1F90084FCFD /* OrtcClient_MacUsage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A4D7BB41843A1F90084FCFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Realtime.co;
+			};
+			buildConfigurationList = 6A4D7BB71843A1F90084FCFD /* Build configuration list for PBXProject "OrtcClient_MacUsage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A4D7BB31843A1F90084FCFD;
+			productRefGroup = 6A4D7BBD1843A1F90084FCFD /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6A4D7C001843A65C0084FCFD /* Products */;
+					ProjectRef = 6A4D7BFF1843A65C0084FCFD /* SocketRocket.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6A4D7BBB1843A1F90084FCFD /* OrtcClient_MacUsage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6A4D7C071843A65D0084FCFD /* libSocketRocket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSocketRocket.a;
+			remoteRef = 6A4D7C061843A65D0084FCFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6A4D7C091843A65D0084FCFD /* SocketRocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SocketRocket.framework;
+			remoteRef = 6A4D7C081843A65D0084FCFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6A4D7C0B1843A65D0084FCFD /* SRWebSocketTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SRWebSocketTests.octest;
+			remoteRef = 6A4D7C0A1843A65D0084FCFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6A4D7C0D1843A65D0084FCFD /* TestChat.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestChat.app;
+			remoteRef = 6A4D7C0C1843A65D0084FCFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A4D7BBA1843A1F90084FCFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4D7BF81843A5530084FCFD /* MasterViewController.xib in Resources */,
+				6A4D7C121843AA0C0084FCFD /* MainMenu.xib in Resources */,
+				6A4D7BCA1843A1F90084FCFD /* InfoPlist.strings in Resources */,
+				6A4D7BD81843A1F90084FCFD /* Images.xcassets in Resources */,
+				6A4D7BD01843A1F90084FCFD /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A4D7BB81843A1F90084FCFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4D7BD31843A1F90084FCFD /* AppDelegate.m in Sources */,
+				6A4D7BF71843A5530084FCFD /* MasterViewController.m in Sources */,
+				6A4D7BCC1843A1F90084FCFD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6A4D7BC81843A1F90084FCFD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4D7BC91843A1F90084FCFD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6A4D7BCE1843A1F90084FCFD /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4D7BCF1843A1F90084FCFD /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6A4D7C101843AA0C0084FCFD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4D7C111843AA0C0084FCFD /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A4D7BEB1843A1F90084FCFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6A4D7BEC1843A1F90084FCFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6A4D7BEE1843A1F90084FCFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrtcClient_MacUsage/OrtcClient_MacUsage-Prefix.pch";
+				INFOPLIST_FILE = "OrtcClient_MacUsage/OrtcClient_MacUsage-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/iosdev/Projects/OrtcClient_MacUsage/OrtcClient_MacUsage/libOrtcClient,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6A4D7BEF1843A1F90084FCFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrtcClient_MacUsage/OrtcClient_MacUsage-Prefix.pch";
+				INFOPLIST_FILE = "OrtcClient_MacUsage/OrtcClient_MacUsage-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/iosdev/Projects/OrtcClient_MacUsage/OrtcClient_MacUsage/libOrtcClient,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A4D7BB71843A1F90084FCFD /* Build configuration list for PBXProject "OrtcClient_MacUsage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4D7BEB1843A1F90084FCFD /* Debug */,
+				6A4D7BEC1843A1F90084FCFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4D7BED1843A1F90084FCFD /* Build configuration list for PBXNativeTarget "OrtcClient_MacUsage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4D7BEE1843A1F90084FCFD /* Debug */,
+				6A4D7BEF1843A1F90084FCFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A4D7BB41843A1F90084FCFD /* Project object */;
+}

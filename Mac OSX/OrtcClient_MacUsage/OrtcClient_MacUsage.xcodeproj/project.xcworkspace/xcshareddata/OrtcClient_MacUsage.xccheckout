@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B0AF2775-C0AC-4F59-B673-6D78D272D1B6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OrtcClient_MacUsage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9B64C819-C299-4521-B2AA-8A88B069A594</key>
+		<string>svn://svn.ibt.lan/svn/ibt.ortc</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>trunk/Source/Ibt.Ortc.DeploySamples/Mac/OrtcClient_MacUsage/OrtcClient_MacUsage.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9B64C819-C299-4521-B2AA-8A88B069A594</key>
+		<string>../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>9B64C819-C299-4521-B2AA-8A88B069A594</key>
+		<string>svn://svn.ibt.lan/svn/ibt.ortc</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://svn.ibt.lan/svn/ibt.ortc/trunk/Source/Ibt.Ortc.DeploySamples/Mac/OrtcClient_MacUsage/OrtcClient_MacUsage.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9B64C819-C299-4521-B2AA-8A88B069A594</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9B64C819-C299-4521-B2AA-8A88B069A594</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ibt</string>
+		</dict>
+	</array>
+</dict>
+</plist>
