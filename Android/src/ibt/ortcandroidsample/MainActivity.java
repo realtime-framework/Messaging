@@ -16,7 +16,6 @@ import ibt.ortc.extensibility.OnSubscribed;
 import ibt.ortc.extensibility.OnUnsubscribed;
 import ibt.ortc.extensibility.OrtcClient;
 import ibt.ortc.extensibility.OrtcFactory;
-import ibt.ortc.extensibility.exception.OrtcNotConnectedException;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -33,8 +32,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private static final String defaultPrivateKey = "YOUR_APPLICATION_PRIVATE_KEY";
-	private static final boolean defaultNeedsAuthentication = true;
+	private static final String defaultPrivateKey = "your_private_key";
+	private static final boolean defaultNeedsAuthentication = false;
 
 	private OrtcClient client;	
 	private int reconnectingTries = 0;
@@ -43,18 +42,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	protected void onStart(){
-		super.onStart();
 		
 		try {
 			Ortc ortc = new Ortc();
@@ -64,10 +51,13 @@ public class MainActivity extends Activity {
 			factory = ortc.loadOrtcFactory("IbtRealtimeSJ");
 
 			client = factory.createClient();
+			
+			client.setApplicationContext(getApplicationContext());
+			client.setGoogleProjectId("your_google_project_id");
 
 		} catch (Exception e) {
 			log(String.format("ORTC CREATE ERROR: %s", e.toString()));
-		}
+		} 
 		
 		if (client != null) {
 			try {
@@ -166,6 +156,18 @@ public class MainActivity extends Activity {
 			}
 		}
 	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	protected void onStart(){
+		super.onStart();				
+	}
 	
 	public void clearClickEventHandler(View v) {
 		TextView textViewLog = (TextView) findViewById(R.id.TextViewLog);
@@ -178,7 +180,7 @@ public class MainActivity extends Activity {
 		
 		EditText editTextChannel = (EditText) findViewById(R.id.EditTextChannel);
 
-		client.subscribe(editTextChannel.getText().toString(), true,
+		client.subscribeWithNotifications(editTextChannel.getText().toString(), true,
 				new OnMessage() {
 					public void run(OrtcClient sender, String channel,
 							String message) {
@@ -269,65 +271,33 @@ public class MainActivity extends Activity {
 		EditText editTextChannel = (EditText) findViewById(R.id.EditTextChannel);
 		CheckBox checkBoxIsCluster = (CheckBox) findViewById(R.id.CheckBoxIsCluster);		
 		
-		if(client != null && client.getIsConnected()){
-			try {
-				client.presence(
-						editTextChannel.getText().toString(), new OnPresence() {
+		Ortc.presence(
+				editTextServer.getText().toString(),
+				checkBoxIsCluster.isChecked(), 
+				editTextApplicationKey.getText().toString(), 
+				editTextAuthenticationToken.getText().toString(), editTextChannel.getText().toString(), new OnPresence() {
+					@Override
+					public void run(Exception error, Presence presence) {
+						final Exception exception = error;
+						final Presence presenceData = presence;
+						runOnUiThread(new Runnable() {
 							@Override
-							public void run(Exception error, Presence presence) {
-								final Exception exception = error;
-								final Presence presenceData = presence;
-								runOnUiThread(new Runnable() {
-									@Override
-									public void run() {
-										if(exception != null){
-											log(String.format("Error: %s", exception.getMessage()));
-										}else{
-											Iterator<?> metadataIterator = presenceData.getMetadata().entrySet().iterator();
-											while(metadataIterator.hasNext()){
-												@SuppressWarnings("unchecked")
-												Map.Entry<String, Long> entry = (Map.Entry<String, Long>) metadataIterator.next();
-												log(entry.getKey() + " - " + entry.getValue());
-											}
-											log("Subscriptions - " + presenceData.getSubscriptions());
-										}			
+							public void run() {
+								if(exception != null){
+									log(String.format("Error: %s", exception.getMessage()));
+								}else{
+									Iterator<?> metadataIterator = presenceData.getMetadata().entrySet().iterator();
+									while(metadataIterator.hasNext()){
+										@SuppressWarnings("unchecked")
+										Map.Entry<String, Long> entry = (Map.Entry<String, Long>) metadataIterator.next();
+										log(entry.getKey() + " - " + entry.getValue());
 									}
-								});
+									log("Subscriptions - " + presenceData.getSubscriptions());
+								}			
 							}
 						});
-			} catch (OrtcNotConnectedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}else{
-			Ortc.presence(
-					editTextServer.getText().toString(),
-					checkBoxIsCluster.isChecked(), 
-					editTextApplicationKey.getText().toString(), 
-					editTextAuthenticationToken.getText().toString(), editTextChannel.getText().toString(), new OnPresence() {
-						@Override
-						public void run(Exception error, Presence presence) {
-							final Exception exception = error;
-							final Presence presenceData = presence;
-							runOnUiThread(new Runnable() {
-								@Override
-								public void run() {
-									if(exception != null){
-										log(String.format("Error: %s", exception.getMessage()));
-									}else{
-										Iterator<?> metadataIterator = presenceData.getMetadata().entrySet().iterator();
-										while(metadataIterator.hasNext()){
-											@SuppressWarnings("unchecked")
-											Map.Entry<String, Long> entry = (Map.Entry<String, Long>) metadataIterator.next();
-											log(entry.getKey() + " - " + entry.getValue());
-										}
-										log("Subscriptions - " + presenceData.getSubscriptions());
-									}			
-								}
-							});
-						}
-					});
-		}
+					}
+				});
 	}
 	
 	public void enablePresenceClickEventHandler(View v) {
@@ -396,6 +366,6 @@ public class MainActivity extends Activity {
 	
 	private void log(String text) {
 		TextView t = ((TextView) findViewById(R.id.TextViewLog));
-		t.setText(String.format("%s - %s\n%s", DateFormat.format("hh:MM:ss", new java.util.Date()), text, t.getText()));
+		t.setText(String.format("%s - %s\n%s", DateFormat.format("HH:mm:ss", new java.util.Date()), text, t.getText()));
 	}
 }
