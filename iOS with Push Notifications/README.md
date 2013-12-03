@@ -8,7 +8,7 @@ This sample app uses the Realtime® Framework Pub/Sub Objective-C library to con
 
 ![ScreenShot](http://messaging-public.realtime.co/screenshots/2.1.0/iOS/example_1.PNG)
 
-![ScreenShot](http://messaging-public.realtime.co/screenshots/2.1.0/iOS/example_1.PNG)
+![ScreenShot](http://messaging-public.realtime.co/screenshots/2.1.0/iOS/example_2.PNG)
 
 > NOTE: For simplicity these samples assume you're using a Realtime® Framework developers' application key with the authentication service disabled (every connection will have permission to publish and subscribe to any channel). For security guidelines please refer to the [Security Guide](http://messaging-public.realtime.co/documentation/starting-guide/security.html). 
 > 
