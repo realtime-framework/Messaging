@@ -1,13 +1,12 @@
 ## The Realtime Framework Pub/Sub messaging system
-Part of the [The Realtime® Framework](http://framework.realtime.co), Realtime Cloud Messaging (aka ORTC) is a secure, fast and highly scalable cloud-hosted Pub/Sub real-time message broker for web and mobile apps.
+Part of the [The Realtime Framework](http://www.realtime.co/solutions/realtimeframework), ORTC (Open Realtime Connectivity) is a secure, fast and highly scalable cloud-hosted Pub/Sub real-time messaging system for web and mobile apps.
 
-If your website or mobile app has data that needs to be updated in the user’s interface as it changes (e.g. real-time stock quotes or ever changing social news feed) Realtime Cloud Messaging is the reliable, easy, unbelievably fast, “works everywhere” solution.
-
+If your website or mobile app has data that needs to be updated in the user's interface as it changes (e.g. real-time stock quotes or ever changing social news feed) ORTC is the reliable, easy, unbelievably fast, "works everywhere" solution.
 
 ## The Android sample app with Push Notifications via GCM
-This sample app uses the Realtime® Framework Pub/Sub Java library to connect, send and receive messages through a Realtime® Server in the cloud. Through the use of Google Cloud Messaging (GCM) messages are delivered as push notifications when the users are offline.
+This sample app uses the Realtime Framework Pub/Sub Java library to connect, send and receive messages through a Realtime Server in the cloud. Through the integration with Google Cloud Messaging (GCM) messages are delivered as push notifications when users are offline.
 
-![ScreenShot](http://messaging-public.realtime.co/screenshots/2.1.0/Android/Screen.jpg)
+![ScreenShot](http://ortc.xrtml.org/screenshots/2.1.0/Android/Screen.jpg)
 
 ## Before you begin:
 
@@ -33,12 +32,13 @@ Replace the string "your_google_project_id" with your Google Project Number in f
 
 6. Register your application key to use GCM notifications (see your Realtime® Developer Account).
 
-> NOTE: For simplicity these samples assume you're using a Realtime® Framework developers' application key with the authentication service disabled (every connection will have permission to publish and subscribe to any channel). For security guidelines please refer to the [Security Guide](http://messaging-public.realtime.co/documentation/starting-guide/security.html). 
+
+> NOTE: For simplicity these samples assume you're using a Realtime Framework developers' application key with the authentication service disabled (every connection will have permission to publish and subscribe to any channel). For security guidelines please refer to the [Security Guide](http://docs.xrtml.org/pubsub/overview/2-1-0/security.htm). 
 > 
-> **Don't forget to replace `YOUR_APPLICATION_KEY` and `YOUR_APPLICATION_PRIVATE_KEY` with your own application key. If you don't already own a free Realtime® Framework application key, [get one now](https://accounts.realtime.co/signup/).**
+> **Don't forget to replace `YOUR_APPLICATION_KEY` and `YOUR_APPLICATION_PRIVATE_KEY` with your own application key. If you don't already own a free RealtimeÂ® Framework application key, [get one now](https://app.realtime.co/developers/getlicense).**
 
 
 ## Documentation
 The Mobile Push Notifications Starting Guide can be found [here](http://messaging-public.realtime.co/documentation/starting-guide/mobilepush.html)
 
-The complete Realtime® Cloud Messaging reference documentation is available [here](http://framework.realtime.co/messaging/#documentation)
+The complete Realtime Framework Pub/Sub reference documentation is available [here](http://docs.xrtml.org/pubsub/library/2-1-0/welcome.htm)
