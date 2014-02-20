@@ -3,9 +3,32 @@
 <head>
     <title></title>
     <script src="cordova.js" type="text/javascript"></script>
-    <script src="scripts/jquery-1.6.4.js" type="text/javascript"></script>
-    <script src="scripts/phonegap-websocket.js" type="text/javascript"></script>
+    <script src="scripts/jquery-1.6.4.js" type="text/javascript"></script>    
     <script type="text/javascript" src="http://dfdbz2tdq3k01.cloudfront.net/js/2.1.0/ortc.js"></script>
+
+    <script type="text/javascript">
+        var loadScript = function (url, callback) {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+
+            if (script.readyState) {  //IE
+                script.onreadystatechange = function () {
+                    if (script.readyState == "loaded" || script.readyState == "complete") {
+                        script.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            } else {  //Others
+                script.onload = function () {
+                    callback();
+                };
+            }
+            script.src = url;
+            document.getElementsByTagName("head")[0].appendChild(script);
+        };       
+    </script>
+
+    
 
     <script type="text/javascript">
         var ortcClient = null,
@@ -69,7 +92,15 @@
 
         $(function () {
             document.addEventListener("deviceready", function () {
-                createClient();
+                 var isAndroid = (navigator.userAgent.match(/Android/i)) == "Android" ? true : false;
+
+                if(isAndroid){
+                    loadScript("scripts/phonegap-websocket.js",function(){
+                        createClient();
+                    });
+                }else{
+                    createClient();
+                }
             });
         });
 
