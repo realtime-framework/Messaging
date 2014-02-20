@@ -4,19 +4,13 @@
  */
 package JavaTest.integration;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Scanner;
-
 import ibt.ortc.api.ChannelPermissions;
-import ibt.ortc.api.Ortc;
-import ibt.ortc.api.Presence;
-import ibt.ortc.api.Strings;
 import ibt.ortc.api.OnDisablePresence;
 import ibt.ortc.api.OnEnablePresence;
 import ibt.ortc.api.OnPresence;
+import ibt.ortc.api.Ortc;
+import ibt.ortc.api.Presence;
+import ibt.ortc.api.Strings;
 import ibt.ortc.extensibility.OnConnected;
 import ibt.ortc.extensibility.OnDisconnected;
 import ibt.ortc.extensibility.OnException;
@@ -28,6 +22,12 @@ import ibt.ortc.extensibility.OnUnsubscribed;
 import ibt.ortc.extensibility.OrtcClient;
 import ibt.ortc.extensibility.OrtcFactory;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;
+
 public class IntegrationTest {
 
 	private static final String defaultServerUrl = "http://ortc-developers.realtime.co/server/2.1";
@@ -35,7 +35,7 @@ public class IntegrationTest {
 	private static final String defaultApplicationKey = "YOUR_APPLICATION_KEY";
 	private static final String defaultPrivateKey = "YOUR_APPLICATION_PRIVATE_KEY";
 	private static final String defaultAuthenticationToken = "RealtimeDemo";
-	private static final boolean defaultNeedsAuthentication = true;
+	private static final boolean defaultNeedsAuthentication = false;
 	private static String serverUrl;
 	private static boolean isBalancer;
 	private static String applicationKey;
