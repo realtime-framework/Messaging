@@ -1,0 +1,53 @@
+{% load staticfiles %}
+
+<script type="text/javascript" src="{% static 'polls/ortc.js' %}"></script>
+<script type="text/javascript">
+	loadOrtcFactory(IbtRealTimeSJType, function (factory, error) {
+		if (error != null) {
+			alert("Factory error: " + error.message);
+		} 
+		else {
+			if (factory != null) {
+				// Create Cloud Messaging client
+				var client = factory.createClient();
+				        
+				// Set client properties              
+				client.setConnectionMetadata('Some connection metadata');
+				client.setClusterUrl('http://ortc-developers.realtime.co/server/2.1/');
+				        
+				client.onConnected = function (theClient) {
+				  // client theClient is connected			            
+			  		theClient.subscribe('poll_' + {{ poll.id }}, true,
+			            function (theClient, channel, msg) {
+							console.log("Received message:", msg);
+			            	var obj = JSON.parse(msg);
+
+			            	var choiceElem = document.getElementById(obj.choice);
+			            	choiceElem.innerHTML = obj.votes;
+						}
+					);                                
+				};
+
+				client.onSubscribed = function (theClient, channel) {
+					console.log("listening for votes")
+				};
+				       
+				client.connect('[YOUR APPLICATION KEY]', 'poll_token');
+			}
+		}
+	});
+</script>
+
+<h1>{{ poll.question }}</h1>
+
+<ul>
+{% for choice in poll.choice_set.all %}
+    <li> 
+    	<span> {{ choice.choice_text }} -- </span> 
+    	<span id={{ choice.id }}> {{ choice.votes }} </span> 
+    	<span> vote{{ choice.votes|pluralize }} </span>
+	</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' poll.id %}">Vote again?</a>
