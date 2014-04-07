@@ -20,6 +20,8 @@ The Realtime® Framework Pub/Sub Ruby library requires the setup of the followin
 > 
 > **Don't forget to replace `YOUR_APPLICATION_KEY` and `YOUR_APPLICATION_PRIVATE_KEY` with your own application key. If you don't already own a free Realtime® Framework application key, [get one now](https://accounts.realtime.co/signup/).**
 
+## Install gem from RubyGems.org
+    gem install ortc
 
 ## Documentation
 The complete Realtime® Cloud Messaging reference documentation is available [here](http://framework.realtime.co/messaging/#documentation)
