@@ -53,6 +53,7 @@
             this.permissionDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label19 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chEnableHeartbeat = new System.Windows.Forms.CheckBox();
             this.chkClientIsCluster = new System.Windows.Forms.CheckBox();
             this.btnSendBugilion = new System.Windows.Forms.Button();
             this.txtClientToken = new System.Windows.Forms.TextBox();
@@ -62,6 +63,9 @@
             this.txtClientChannelSubscribed = new System.Windows.Forms.TextBox();
             this.txtClientAppKey = new System.Windows.Forms.TextBox();
             this.btnIsSubscribed = new System.Windows.Forms.Button();
+            this.btnDisablePresence = new System.Windows.Forms.Button();
+            this.btnEnablePresence = new System.Windows.Forms.Button();
+            this.btnPresence = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -96,9 +100,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnPresence = new System.Windows.Forms.Button();
-            this.btnEnablePresence = new System.Windows.Forms.Button();
-            this.btnDisablePresence = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.permissionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionDataBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
@@ -218,7 +219,6 @@
             this.txtPostAuthAppKey.Name = "txtPostAuthAppKey";
             this.txtPostAuthAppKey.Size = new System.Drawing.Size(128, 20);
             this.txtPostAuthAppKey.TabIndex = 10;
-            this.txtPostAuthAppKey.Text = "";
             this.txtPostAuthAppKey.TextChanged += new System.EventHandler(this.txtPostAppKey_TextChanged);
             // 
             // label12
@@ -271,6 +271,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.chEnableHeartbeat);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.chkClientIsCluster);
             this.panel2.Controls.Add(this.btnSubscribe);
@@ -305,6 +306,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(516, 458);
             this.panel2.TabIndex = 39;
+            // 
+            // chEnableHeartbeat
+            // 
+            this.chEnableHeartbeat.AutoSize = true;
+            this.chEnableHeartbeat.Location = new System.Drawing.Point(195, 178);
+            this.chEnableHeartbeat.Name = "chEnableHeartbeat";
+            this.chEnableHeartbeat.Size = new System.Drawing.Size(109, 17);
+            this.chEnableHeartbeat.TabIndex = 37;
+            this.chEnableHeartbeat.Text = "Enable Heartbeat";
+            this.chEnableHeartbeat.UseVisualStyleBackColor = true;
             // 
             // chkClientIsCluster
             // 
@@ -386,6 +397,36 @@
             this.btnIsSubscribed.Text = "Check";
             this.btnIsSubscribed.UseVisualStyleBackColor = true;
             this.btnIsSubscribed.Click += new System.EventHandler(this.btnIsSubscribed_Click);
+            // 
+            // btnDisablePresence
+            // 
+            this.btnDisablePresence.Location = new System.Drawing.Point(308, 358);
+            this.btnDisablePresence.Name = "btnDisablePresence";
+            this.btnDisablePresence.Size = new System.Drawing.Size(194, 28);
+            this.btnDisablePresence.TabIndex = 8;
+            this.btnDisablePresence.Text = "Disable presence";
+            this.btnDisablePresence.UseVisualStyleBackColor = true;
+            this.btnDisablePresence.Click += new System.EventHandler(this.btnDisablePresence_Click);
+            // 
+            // btnEnablePresence
+            // 
+            this.btnEnablePresence.Location = new System.Drawing.Point(108, 358);
+            this.btnEnablePresence.Name = "btnEnablePresence";
+            this.btnEnablePresence.Size = new System.Drawing.Size(194, 28);
+            this.btnEnablePresence.TabIndex = 8;
+            this.btnEnablePresence.Text = "Enable presence";
+            this.btnEnablePresence.UseVisualStyleBackColor = true;
+            this.btnEnablePresence.Click += new System.EventHandler(this.btnEnablePresence_Click);
+            // 
+            // btnPresence
+            // 
+            this.btnPresence.Location = new System.Drawing.Point(9, 358);
+            this.btnPresence.Name = "btnPresence";
+            this.btnPresence.Size = new System.Drawing.Size(93, 28);
+            this.btnPresence.TabIndex = 8;
+            this.btnPresence.Text = "Presence";
+            this.btnPresence.UseVisualStyleBackColor = true;
+            this.btnPresence.Click += new System.EventHandler(this.btnPresence_Click);
             // 
             // label21
             // 
@@ -739,36 +780,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnPresence
-            // 
-            this.btnPresence.Location = new System.Drawing.Point(9, 358);
-            this.btnPresence.Name = "btnPresence";
-            this.btnPresence.Size = new System.Drawing.Size(93, 28);
-            this.btnPresence.TabIndex = 8;
-            this.btnPresence.Text = "Presence";
-            this.btnPresence.UseVisualStyleBackColor = true;
-            this.btnPresence.Click += new System.EventHandler(this.btnPresence_Click);
-            // 
-            // btnEnablePresence
-            // 
-            this.btnEnablePresence.Location = new System.Drawing.Point(108, 358);
-            this.btnEnablePresence.Name = "btnEnablePresence";
-            this.btnEnablePresence.Size = new System.Drawing.Size(194, 28);
-            this.btnEnablePresence.TabIndex = 8;
-            this.btnEnablePresence.Text = "Enable presence";
-            this.btnEnablePresence.UseVisualStyleBackColor = true;
-            this.btnEnablePresence.Click += new System.EventHandler(this.btnEnablePresence_Click);
-            // 
-            // btnDisablePresence
-            // 
-            this.btnDisablePresence.Location = new System.Drawing.Point(308, 358);
-            this.btnDisablePresence.Name = "btnDisablePresence";
-            this.btnDisablePresence.Size = new System.Drawing.Size(194, 28);
-            this.btnDisablePresence.TabIndex = 8;
-            this.btnDisablePresence.Text = "Disable presence";
-            this.btnDisablePresence.UseVisualStyleBackColor = true;
-            this.btnDisablePresence.Click += new System.EventHandler(this.btnDisablePresence_Click);
-            // 
             // OrtcUsageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,6 +875,7 @@
         private System.Windows.Forms.Button btnPresence;
         private System.Windows.Forms.Button btnDisablePresence;
         private System.Windows.Forms.Button btnEnablePresence;
+        private System.Windows.Forms.CheckBox chEnableHeartbeat;
     }
 }
 

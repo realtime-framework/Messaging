@@ -368,6 +368,11 @@ namespace Ibt.Ortc.Demo.WindowsApp
             Log(String.Format("Connected to: {0}", _ortc.Url));
             Log(String.Format("Connection metadata: {0}", _ortc.ConnectionMetadata));
             Log(String.Format("Session ID: {0}", _ortc.SessionId));
+            Log(String.Format("Heartbeat: {0}", _ortc.HeartbeatActive ? "active" : "inactive"));
+            if (_ortc.HeartbeatActive)
+            {
+                Log(String.Format("Heartbeat time: {0}    Heartbeat fails: {1}", _ortc.HeartbeatTime, _ortc.HeartbeatFails));
+            }
 
             btnDrawCircle.Enabled = true;
             btnSendBugilion.Enabled = true;
@@ -439,6 +444,7 @@ namespace Ibt.Ortc.Demo.WindowsApp
             {
                 _ortc.Url = txtClientUrl.Text;
             }
+            _ortc.HeartbeatActive = chEnableHeartbeat.Checked;
 
             Log(String.Format("Connecting to: {0}...", txtClientUrl.Text));
 
@@ -682,6 +688,7 @@ namespace Ibt.Ortc.Demo.WindowsApp
                 });
             }
         }
+
     }
 
 

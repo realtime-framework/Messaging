@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ibt.Ortc.Api, Version=2.1.8.0, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="Ibt.Ortc.Api, Version=2.1.10.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Ibt.Ortc.Api.dll</HintPath>
     </Reference>
