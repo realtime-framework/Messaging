@@ -11,7 +11,7 @@
         To learn more about ASP.NET visit <a href="http://www.asp.net" title="ASP.NET Website">www.asp.net</a>.
     </p>
     <p>
-        You can also find <a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;clcid=0x409"
-            title="MSDN ASP.NET Docs">documentation on ASP.NET at MSDN</a>.
+        In this Realtime sample a message was sent to channel MyChannel saying "Client navigated to tab home".<br />
+        Use <a href="http://console.realtime.co" target="_blank">http://console.realtime.co</a> in another browser window and subscribe the channel to receive the sent message.
     </p>
 </asp:Content>

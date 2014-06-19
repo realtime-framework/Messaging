@@ -13,13 +13,11 @@ In order to achieve this goal you need to instantiate the client in `Global.asax
 After the client is instantiated you must add the client to the application context,
 so you can access it in every request. 
 
-In order to test the application, you can run the JavaScript sample app ([https://github.com/RTWWorld/pubsub-examples/tree/master/Javascript](https://github.com/RTWWorld/pubsub-examples/tree/master/Javascript)), subscribe the channel `MyChannel` and see messages arriving in real-time whenever you change the tab in the web application.
+In order to test the application, you can run the Realtime Developer Console ([http://console.realtime.co](http://console.realtime.co)), subscribe the channel `MyChannel` and see messages arriving in real-time whenever you change the tab in the web application.
 
 ### A few deploy notes:
 
 - Ensure the DLL's are not blocked. In order to unblock it go to file properties in windows explorer and press the unblock button in the tab General;
-
-- Ensure your application has access to the plugins folder;
 
 - The only assemblies you need to add as reference to your project are `Ibt.Ortc.Api.dll` and `Ibt.Ortc.Api.Extensibility.dll`
 

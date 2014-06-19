@@ -8,6 +8,9 @@
         About
     </h2>
     <p>
-        Put content here.
+        <p>
+            In this Realtime sample a message was sent to channel MyChannel saying "Client navigated to tab about".<br />
+            Use <a href="http://console.realtime.co" target="_blank">http://console.realtime.co</a> in another browser window and subscribe the channel to receive the sent message.
+        </p>
     </p>
 </asp:Content>

@@ -8,7 +8,7 @@
         string authToken = "AUTHENTICATION_TOKEN";
         string connectionUrl = "http://ortc-developers.realtime.co/server/2.1";
         
-        var api = new Ibt.Ortc.Api.Ortc("[REPLACE WITH THE ABSOLUTE PATH TO THE REALTIME PLUGINS FOLDER]");
+        var api = new Ibt.Ortc.Api.Ortc();
 
         Ibt.Ortc.Api.Extensibility.IOrtcFactory factory = api.LoadOrtcFactory("IbtRealTimeSJ");
 
