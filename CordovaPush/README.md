@@ -1,11 +1,13 @@
-<h1>Ortc push notifications plugin for iOS</h1>
-<hr/>
-<h2>Desciption</h2>
+<h1>Cordova Push Notifications for iOS</h1>
+<h2> (using Realtime Messaging)</h2>
 
-This plugion is for use with Cordova in iOs platform together with realtime ortc messagin library, it provides communication between javascript and Objective-C.  
+
+<h2>Description</h2>
+
+This Cordova plugin should be used with the iOS platform together with the Realtime Messaging library (ORTC) for Push Notifications support.  
 
 <h3>Important</h3>
-Push notifications only work in real devices (iPhones, iPads).
+Push Notifications only work in real devices (not on simulator).
 
 <hr/>
 <h3>Contents</h3>
@@ -19,7 +21,7 @@ Push notifications only work in real devices (iPhones, iPads).
 
 <hr/>
 <h2 id='Mi'>Manual instalation</h2>
-<p>Copy the following files to your project's</p>
+<p>Copy the following files to your project</p>
 
 <pre><code>RealtimeCordovaDelegate.h
 RealtimeCordovaDelegate.m
@@ -44,21 +46,21 @@ OrtcPushPlugin.m
 <h3>Plugin</h3>
 <hr/>
 <ul>
-	<li><h4>checkForNotifications(callback())</h4><p>This method is used to verify push notifications on buffer on the native code from de the javascript interface.
+	<li><h4>checkForNotifications(callback())</h4><p>This method is used to verify push notifications on buffer on the native code from the javascript interface.
 	<ul>
-		<li>callback() - is trigger afether iOS native finish processing.</li>
+		<li>callback() - is triggered after iOS native finishes processing.</li>
 	</ul>
 	</p></li>
-	<li><h4>connect(config, successCallback(), errorCallback())</h4><p>This method is used to establish the ortc connection.
+	<li><h4>connect(config, successCallback(), errorCallback())</h4><p>This method is used to establish the ORTC connection.
 	<ul>
 		<li>config - is an array to specify ['APP_KEY', 'TOKEN', 'METADATA', 'SERVER URL']</li>
 		<li>successCallback() - this function is call when connection is establih.</li>
 		<li>errorCallback() - this function is call when connection error exist.</li>
 	</ul>
 	</p></li>
-	<li><p><h4>disconnect(callback())</h4><p>This method is used to kill ortc connection.</p>
+	<li><p><h4>disconnect(callback())</h4><p>This method is used to disconnect the ORTC connection.</p>
 		<ul>
-			<li>callback() - is trigger afether connection is disconnect.</li>
+			<li>callback() - is triggered after connection is disconnected.</li>
 		</ul>
 	</p></li>
 	<li><h4>subscribe(channel, callback())</h4>
@@ -66,29 +68,29 @@ OrtcPushPlugin.m
 		Subscribe a channel.
 		<ul>
 			<li>channel - is the channel name to subscribe.</li>
-			<li>callback() - is trigger afether channel is subscibed.</li>
+			<li>callback() - is triggered after channel is subscribed.</li>
 		</ul>
 	</p></li>
-	<li><p><h4>unsubscribe(channel,callback())</h4><p>This method is used to unsubscribe a channel previous subcribed.</p>
+	<li><p><h4>unsubscribe(channel,callback())</h4><p>This method is used to unsubscribe a channel previously subcribed.</p>
 		<ul>
-			<li>channel - is the channel name to subscribe.</li>
-			<li>callback() - is trigger afether channel is unsubscibed.</li>
+			<li>channel - is the channel name to unsubscribe.</li>
+			<li>callback() - is triggered after channel is unsubscribed.</li>
 		</ul>
 	</p></li>
-	<li><p><h4>setApplicationIconBadgeNumber(badge,callback())</h4><p>This method is used to set application bage number.</p>
+	<li><p><h4>setApplicationIconBadgeNumber(badge,callback())</h4><p>This method is used to set the application badge number.</p>
 		<ul>
-			<li>badge - is the number to appear on the bage.</li>
-			<li>callback() - is trigger afether iOS native code finish.</li>
+			<li>badge - the number to appear on the bage.</li>
+			<li>callback() - is triggered after iOS native code finishes.</li>
 		</ul>
 	</p></li>
 	<li><p><h4>cancelAllLocalNotifications(callback())</h4><p>This method is used to clear notifications from notification center.</p>
 		<ul>
-			<li>callback() - is trigger afether iOS native code finish.</li>
+			<li>callback() - is triggered after iOS native code finishes.</li>
 		</ul>
 	</p></li>
-	<li><p><h4>log(logString)</h4><p>This method is used to log data in XCODE console from the javascript code.</p>
+	<li><p><h4>log(logString)</h4><p>This is a handy method to log data into XCODE console from the javascript code.</p>
 		<ul>
-			<li>logString - is the string to be loged in the console.</li>
+			<li>logString - is the string to be logged into the console.</li>
 		</ul>
 	</p></li>
 </ul> 
@@ -97,14 +99,15 @@ OrtcPushPlugin.m
 
 <pre><code>
 
-//Establish connection with ortc and subscribe channel in input text box on the HTML interface.
+//Establish connection with ORTC server and subscribe the channel entered in the input text box on the HTML interface.
+
 function subscribe()
 {
 	if(window.plugins && window.plugins.OrtcPushPlugin)
 	{
     	var OrtcPushPlugin = window.plugins.OrtcPushPlugin;
         OrtcPushPlugin.log("OnConnect");                     
-        OrtcPushPlugin.connect(['INSERT APP KEY', 'token', 'metadata', 'https://ortc-developers.realtime.co/server/ssl/2.1/'], 
+        OrtcPushPlugin.connect(['INSERT YOUR APP KEY', 'token', 'metadata', 'https://ortc-developers.realtime.co/server/ssl/2.1/'], 
         	function ()
         	{
             	OrtcPushPlugin.log("Connected: ");
@@ -128,7 +131,9 @@ function subscribe()
 };
 
 
-//Catch push-notification trigger from iOS native code.
+//Catch the push-notification event when a new notification is received (or tapped by the user)
+//Shows the extra property of push notification payload (can be customized using the Realtime Custom Push REST endpoint)
+
 document.addEventListener("push-notification", 
 	function(notification)
 	{
@@ -139,3 +144,24 @@ document.addEventListener("push-notification",
 	}, false);
         
 </code></pre>
+
+<h2 id='ue'>Testing the custom push notifications delivery</h2>
+<hr/>
+
+<p>To test your Push Notifications you need to go through the setup process (see the iOS Push Notifications Starting Guide) and use the Realtime REST API to send a custom push with the following POST to https://ortc-mobilepush.realtime.co/mp/publish</p>
+
+<pre><code>
+{
+   "applicationKey": "[INSERT YOUR APP KEY]",
+   "privateKey": "[INSERT YOUR APP PRIVATE KEY]",
+   "channel" : "[INSERT CHANNEL TO SEND PUSH]",
+   "message" : "[INSERT ALERT TEXT]",
+    "payload" : "{
+     \"sound\" : \"default\",
+     \"badge\" : \"1\",
+     \"extra\" : \"[INSERT CUSTOMIZED PAYLOAD]\"
+    }"
+}
+</code></pre>
+
+Have fun pushing!
