@@ -13,14 +13,115 @@ Push Notifications only work in real devices (not on simulator).
 <h3>Contents</h3>
 
 <ul>
+	<li><a ref='pc'>Project configuration</a></li>
 	<li><a ref='Mi'>Manual instalation</a></li>
 	<li><a ref='api'>API reference</a></li>
 	<li><a ref='ue'>Usage examples</a></li>
+	<li><a ref='te'>Testing the custom push notifications delivery</a></li>
 </ul> 
+
+<hr/>
+<h2 id='pc'>Project configuration</h2>
+<h3 id='pd'>Plugin dependencies</h3>
+<ul>
+	<li>iOS Realtime Messaging (ORTC) SDK: <a href='http://messaging-public.realtime.co/api/download/ios/2.1.0/ApiiOS.zip'>download</a></li>
+	<li>SocketRocket library: <a href='https://github.com/square/SocketRocket'>GitHub repo</a></li>
+</ul>
+
+<h3 id='pd'>Step by step</h3>
+<ol>
+
+	<li><h5>Add the plugin using the Cordova CLI</h5>
+	<pre><code>cordova plugin add co.realtime.plugins.cordovapush</code></pre>
+	</li>
+	<p></p>
+
+	<li><h5>Add libOrtcClient.a to your project</h5>
+	After downloading the iOS ORTC SDK, move the folder ApiiOS to your project root folder and drag the libOrtcClient.a to your project framework group.</li>
+	<p></p>
+
+	<li><h5>Add SocketRocket to your project</h5>
+	After downloading the SocketRocket from GitHub, move the folder to your project root folder and drag it to your project framework group.</li>
+	<p></p>
+
+	<li><h5>Link binary libraries</h5>
+	Link the following binary libraries into your XCODE project build phases</li>
+	<ul>
+		<li>libicucore.dylib</li>
+		<li>CFNetwork.framework</li>
+		<li>Security.framework</li>
+	</ul>
+	<p></p>
+
+	<li><h5>Set libraries headers path</h5>
+	On your XCODE project you need to set the path to the libraries headers. On XCODE project build settings look for the section "Header search paths" and add the following paths:</li>
+	<p></p>
+
+	<ul>
+		<li>"$(PROJECT_DIR)/ApiiOS/include"</li>
+		<li>"$(PROJECT_DIR)/CordovaLib/Classes"</li>
+	</ul>
+	<p></p>
+
+	<li><h5>Configure the AppDelegate in your Cordova application</h5>
+		<ul>
+			<li>Add the RealtimeCordovaDelegate import and make sure that AppDelegate extends this class. 
+<pre><code>#import "RealtimeCordovaDelegate.h"
+@interface AppDelegate : RealtimeCordovaDelegate <UIApplicationDelegate>{}
+</code></pre>
+			</li>
+
+			<li>Now you must call super from AppDelegate override methods. 
+<pre><code>- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
+{
+    <b>[super application:application didFinishLaunchingWithOptions:launchOptions];</b>
+	/*
+	.
+	.
+	*/    
+}
+
+
+- (void) application:(UIApplication *)application
+   didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    <b>[super application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];</b>
+	/*
+	.
+	.
+	*/
+}
+
+- (void) application:(UIApplication *)application
+    didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    <b>[super application:application didFailToRegisterForRemoteNotificationsWithError:error];</b>
+    	/*
+	.
+	.
+	*/
+}
+</code></pre>
+			</li>
+
+			<li><h5>Generate the APNS certificates for push notification on the Apple Developer Center</h5>
+			<a href='http://messaging-public.realtime.co/documentation/starting-guide/mobilePushAPNS.html'>Follow the iOS Push Notifications tutorial</a>
+			</li>
+			<p></p>
+
+			<li><h5>Build and run the app in an iOS device</h5>
+			NOTE: The Push Notifications won't work on the simulators, only on actual devices.
+			</li>
+			
+		</ul>
+	</li>
+	<ul>
+</ol>
+
 
 
 <hr/>
-<h2 id='Mi'>Manual instalation</h2>
+<h2 id='Mi'>Manual plugin instalation</h2>
 <p>Copy the following files to your project</p>
 
 <pre><code>RealtimeCordovaDelegate.h
@@ -145,13 +246,11 @@ document.addEventListener("push-notification",
         
 </code></pre>
 
-<h2 id='ue'>Testing the custom push notifications delivery</h2>
-<hr/>
+<h2 id='te'>Testing the custom push notifications delivery</h2>
 
 <p>To test your Push Notifications you need to go through the setup process (see the iOS Push Notifications Starting Guide) and use the Realtime REST API to send a custom push with the following POST to https://ortc-mobilepush.realtime.co/mp/publish</p>
 
-<pre><code>
-{
+<pre><code>{
    "applicationKey": "[INSERT YOUR APP KEY]",
    "privateKey": "[INSERT YOUR APP PRIVATE KEY]",
    "channel" : "[INSERT CHANNEL TO SEND PUSH]",
