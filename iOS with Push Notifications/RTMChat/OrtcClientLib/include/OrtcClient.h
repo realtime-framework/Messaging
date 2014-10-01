@@ -13,6 +13,15 @@
 #import <Foundation/Foundation.h>
 #import "SRWebSocket.h"
 
+#define heartbeatDefaultTime 15 // Heartbeat default interval time
+#define heartbeatDefaultFails 3 // Heartbeat default max fails
+
+#define heartbeatMaxTime 60
+#define heartbeatMinTime 10
+
+#define heartbeatMaxFails 6
+#define heartbeatMinFails 1
+
 @class OrtcClient;
 
 @protocol OrtcClientDelegate <NSObject>
@@ -328,6 +337,37 @@
  */
 - (void)presence:(NSString*) aUrl isCLuster:(BOOL) aIsCluster applicationKey:(NSString*) aApplicationKey authenticationToken:(NSString*) aAuthenticationToken channel:(NSString*) channel callback:(void (^)(NSError* error, NSDictionary* result)) aCallback;
 
+/**
+ * Get heartbeat interval.
+ */
+- (int) getHeartbeatTime;
+/**
+ * Set heartbeat interval.
+ */
+- (void) setHeartbeatTime:(int) newHeartbeatTime;
+/**
+ * Get how many times can the client fail the heartbeat.
+ */
+- (int) getHeartbeatFails;
+/**
+ * Set heartbeat fails. Defines how many times can the client fail the heartbeat.
+ */
+- (void) setHeartbeatFails:(int) newHeartbeatFails;
+/**
+ * Indicates whether heartbeat is active or not.
+ */
+- (BOOL) isHeartbeatActive;
+/**
+ * Enables the client heartbeat
+ */
+- (void) enableHeartbeat;
+/**
+ * Disables the client heartbeat
+ */
+- (void) disableHeartbeat;
+
+
++ (void) setDEVICE_TOKEN:(NSString *) deviceToken;
 @end
 
 
