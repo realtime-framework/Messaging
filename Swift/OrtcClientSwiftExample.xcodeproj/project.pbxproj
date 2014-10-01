@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		570FF65019DC40C700C5785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FF64F19DC40C700C5785A /* AppDelegate.swift */; };
+		570FF65219DC40C700C5785A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FF65119DC40C700C5785A /* ViewController.swift */; };
+		570FF65519DC40C700C5785A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FF65319DC40C700C5785A /* Main.storyboard */; };
+		570FF65719DC40C700C5785A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570FF65619DC40C700C5785A /* Images.xcassets */; };
+		570FF65A19DC40C700C5785A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570FF65819DC40C700C5785A /* LaunchScreen.xib */; };
+		570FF66619DC40C700C5785A /* OrtcClientSwiftExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FF66519DC40C700C5785A /* OrtcClientSwiftExampleTests.swift */; };
+		570FF67119DC40FD00C5785A /* libOrtcClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570FF67019DC40FD00C5785A /* libOrtcClient.a */; };
+		570FF67F19DC44E700C5785A /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 570FF67819DC44E700C5785A /* base64.c */; };
+		570FF68019DC44E700C5785A /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 570FF67B19DC44E700C5785A /* NSData+SRB64Additions.m */; };
+		570FF68119DC44E700C5785A /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 570FF67E19DC44E700C5785A /* SRWebSocket.m */; };
+		570FF68319DC44F800C5785A /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 570FF68219DC44F800C5785A /* libicucore.dylib */; };
+		570FF68519DC457D00C5785A /* OrtcHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FF68419DC457D00C5785A /* OrtcHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		570FF66019DC40C700C5785A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 570FF64219DC40C700C5785A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 570FF64919DC40C700C5785A;
+			remoteInfo = OrtcClientSwiftExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		570FF64A19DC40C700C5785A /* OrtcClientSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrtcClientSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		570FF64E19DC40C700C5785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		570FF64F19DC40C700C5785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		570FF65119DC40C700C5785A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		570FF65419DC40C700C5785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		570FF65619DC40C700C5785A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		570FF65919DC40C700C5785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		570FF65F19DC40C700C5785A /* OrtcClientSwiftExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrtcClientSwiftExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		570FF66419DC40C700C5785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		570FF66519DC40C700C5785A /* OrtcClientSwiftExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrtcClientSwiftExampleTests.swift; sourceTree = "<group>"; };
+		570FF67019DC40FD00C5785A /* libOrtcClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOrtcClient.a; sourceTree = "<group>"; };
+		570FF67619DC44A400C5785A /* -Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		570FF67819DC44E700C5785A /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		570FF67919DC44E700C5785A /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		570FF67A19DC44E700C5785A /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		570FF67B19DC44E700C5785A /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		570FF67C19DC44E700C5785A /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		570FF67D19DC44E700C5785A /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		570FF67E19DC44E700C5785A /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		570FF68219DC44F800C5785A /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		570FF68419DC457D00C5785A /* OrtcHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrtcHandler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		570FF64719DC40C700C5785A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				570FF68319DC44F800C5785A /* libicucore.dylib in Frameworks */,
+				570FF67119DC40FD00C5785A /* libOrtcClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		570FF65C19DC40C700C5785A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		570FF64119DC40C700C5785A = {
+			isa = PBXGroup;
+			children = (
+				570FF68219DC44F800C5785A /* libicucore.dylib */,
+				570FF64C19DC40C700C5785A /* OrtcClientSwiftExample */,
+				570FF66219DC40C700C5785A /* OrtcClientSwiftExampleTests */,
+				570FF64B19DC40C700C5785A /* Products */,
+				570FF66F19DC40EA00C5785A /* frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		570FF64B19DC40C700C5785A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				570FF64A19DC40C700C5785A /* OrtcClientSwiftExample.app */,
+				570FF65F19DC40C700C5785A /* OrtcClientSwiftExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		570FF64C19DC40C700C5785A /* OrtcClientSwiftExample */ = {
+			isa = PBXGroup;
+			children = (
+				570FF64F19DC40C700C5785A /* AppDelegate.swift */,
+				570FF65119DC40C700C5785A /* ViewController.swift */,
+				570FF65319DC40C700C5785A /* Main.storyboard */,
+				570FF65619DC40C700C5785A /* Images.xcassets */,
+				570FF65819DC40C700C5785A /* LaunchScreen.xib */,
+				570FF67619DC44A400C5785A /* -Bridging-Header.h */,
+				570FF64D19DC40C700C5785A /* Supporting Files */,
+				570FF68419DC457D00C5785A /* OrtcHandler.swift */,
+			);
+			path = OrtcClientSwiftExample;
+			sourceTree = "<group>";
+		};
+		570FF64D19DC40C700C5785A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				570FF64E19DC40C700C5785A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		570FF66219DC40C700C5785A /* OrtcClientSwiftExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				570FF66519DC40C700C5785A /* OrtcClientSwiftExampleTests.swift */,
+				570FF66319DC40C700C5785A /* Supporting Files */,
+			);
+			path = OrtcClientSwiftExampleTests;
+			sourceTree = "<group>";
+		};
+		570FF66319DC40C700C5785A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				570FF66419DC40C700C5785A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		570FF66F19DC40EA00C5785A /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				570FF67719DC44E700C5785A /* SocketRocket */,
+				570FF67019DC40FD00C5785A /* libOrtcClient.a */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		570FF67719DC44E700C5785A /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				570FF67819DC44E700C5785A /* base64.c */,
+				570FF67919DC44E700C5785A /* base64.h */,
+				570FF67A19DC44E700C5785A /* NSData+SRB64Additions.h */,
+				570FF67B19DC44E700C5785A /* NSData+SRB64Additions.m */,
+				570FF67C19DC44E700C5785A /* SocketRocket-Prefix.pch */,
+				570FF67D19DC44E700C5785A /* SRWebSocket.h */,
+				570FF67E19DC44E700C5785A /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		570FF64919DC40C700C5785A /* OrtcClientSwiftExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 570FF66919DC40C700C5785A /* Build configuration list for PBXNativeTarget "OrtcClientSwiftExample" */;
+			buildPhases = (
+				570FF64619DC40C700C5785A /* Sources */,
+				570FF64719DC40C700C5785A /* Frameworks */,
+				570FF64819DC40C700C5785A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrtcClientSwiftExample;
+			productName = OrtcClientSwiftExample;
+			productReference = 570FF64A19DC40C700C5785A /* OrtcClientSwiftExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		570FF65E19DC40C700C5785A /* OrtcClientSwiftExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 570FF66C19DC40C700C5785A /* Build configuration list for PBXNativeTarget "OrtcClientSwiftExampleTests" */;
+			buildPhases = (
+				570FF65B19DC40C700C5785A /* Sources */,
+				570FF65C19DC40C700C5785A /* Frameworks */,
+				570FF65D19DC40C700C5785A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				570FF66119DC40C700C5785A /* PBXTargetDependency */,
+			);
+			name = OrtcClientSwiftExampleTests;
+			productName = OrtcClientSwiftExampleTests;
+			productReference = 570FF65F19DC40C700C5785A /* OrtcClientSwiftExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		570FF64219DC40C700C5785A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Internet Business Technologies";
+				TargetAttributes = {
+					570FF64919DC40C700C5785A = {
+						CreatedOnToolsVersion = 6.0.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					570FF65E19DC40C700C5785A = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 570FF64919DC40C700C5785A;
+					};
+				};
+			};
+			buildConfigurationList = 570FF64519DC40C700C5785A /* Build configuration list for PBXProject "OrtcClientSwiftExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 570FF64119DC40C700C5785A;
+			productRefGroup = 570FF64B19DC40C700C5785A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				570FF64919DC40C700C5785A /* OrtcClientSwiftExample */,
+				570FF65E19DC40C700C5785A /* OrtcClientSwiftExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		570FF64819DC40C700C5785A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				570FF65519DC40C700C5785A /* Main.storyboard in Resources */,
+				570FF65A19DC40C700C5785A /* LaunchScreen.xib in Resources */,
+				570FF65719DC40C700C5785A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		570FF65D19DC40C700C5785A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		570FF64619DC40C700C5785A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				570FF68019DC44E700C5785A /* NSData+SRB64Additions.m in Sources */,
+				570FF65219DC40C700C5785A /* ViewController.swift in Sources */,
+				570FF68119DC44E700C5785A /* SRWebSocket.m in Sources */,
+				570FF67F19DC44E700C5785A /* base64.c in Sources */,
+				570FF68519DC457D00C5785A /* OrtcHandler.swift in Sources */,
+				570FF65019DC40C700C5785A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		570FF65B19DC40C700C5785A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				570FF66619DC40C700C5785A /* OrtcClientSwiftExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		570FF66119DC40C700C5785A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 570FF64919DC40C700C5785A /* OrtcClientSwiftExample */;
+			targetProxy = 570FF66019DC40C700C5785A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		570FF65319DC40C700C5785A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				570FF65419DC40C700C5785A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		570FF65819DC40C700C5785A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				570FF65919DC40C700C5785A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		570FF66719DC40C700C5785A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		570FF66819DC40C700C5785A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		570FF66A19DC40C700C5785A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/include/",
+					"$(PROJECT_DIR)/OrtcClientSwiftExample/",
+				);
+				INFOPLIST_FILE = OrtcClientSwiftExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		570FF66B19DC40C700C5785A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/include/",
+					"$(PROJECT_DIR)/OrtcClientSwiftExample/",
+				);
+				INFOPLIST_FILE = OrtcClientSwiftExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		570FF66D19DC40C700C5785A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OrtcClientSwiftExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrtcClientSwiftExample.app/OrtcClientSwiftExample";
+			};
+			name = Debug;
+		};
+		570FF66E19DC40C700C5785A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OrtcClientSwiftExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrtcClientSwiftExample.app/OrtcClientSwiftExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		570FF64519DC40C700C5785A /* Build configuration list for PBXProject "OrtcClientSwiftExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				570FF66719DC40C700C5785A /* Debug */,
+				570FF66819DC40C700C5785A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		570FF66919DC40C700C5785A /* Build configuration list for PBXNativeTarget "OrtcClientSwiftExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				570FF66A19DC40C700C5785A /* Debug */,
+				570FF66B19DC40C700C5785A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		570FF66C19DC40C700C5785A /* Build configuration list for PBXNativeTarget "OrtcClientSwiftExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				570FF66D19DC40C700C5785A /* Debug */,
+				570FF66E19DC40C700C5785A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 570FF64219DC40C700C5785A /* Project object */;
+}

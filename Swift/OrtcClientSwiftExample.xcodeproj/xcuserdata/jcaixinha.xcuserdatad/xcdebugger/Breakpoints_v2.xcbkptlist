@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrtcClientSwiftExample/OrtcHandler.swift"
+            timestampString = "433870337.167974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "connect()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrtcClientSwiftExample/OrtcHandler.swift"
+            timestampString = "433870337.167974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "connect()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrtcClientSwiftExample/OrtcHandler.swift"
+            timestampString = "433870395.618628"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "onConnected(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrtcClientSwiftExample.OrtcHandler.(onConnected (OrtcClientSwiftExample.OrtcHandler) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.OrtcClient&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "OrtcClientSwiftExample"
+                  urlString = "file:///Users/jcaixinha/Documents/ORTC_EXAMPLES/OrtcClientSwiftExample/OrtcClientSwiftExample/OrtcHandler.swift"
+                  timestampString = "433868470.581506"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "reabstraction thunk helper from @callee_owned (@owned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.OrtcClient&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; (@unowned ()) to @callee_owned (@in (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.OrtcClient&gt;, Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;)) -&gt; (@out ())"
+                  moduleName = "OrtcClientSwiftExample"
+                  urlString = "file:///Users/jcaixinha/Documents/ORTC_EXAMPLES/OrtcClientSwiftExample/OrtcClientSwiftExample/OrtcHandler.swift"
+                  timestampString = "433868470.581771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "reabstraction thunk helper from @callee_owned (@in (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.OrtcClient&gt;, Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;)) -&gt; (@out ()) to @callee_owned (@owned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.OrtcClient&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; (@unowned ())"
+                  moduleName = "OrtcClientSwiftExample"
+                  urlString = "file:///Users/jcaixinha/Documents/ORTC_EXAMPLES/OrtcClientSwiftExample/OrtcClientSwiftExample/OrtcHandler.swift"
+                  timestampString = "433868470.582011"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "reabstraction thunk helper from @callee_owned (@owned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.OrtcClient&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;) -&gt; (@unowned ()) to @callee_unowned @objc_block (@unowned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.OrtcClient&gt;, @unowned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSString&gt;, @unowned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSString&gt;) -&gt; (@unowned ())"
+                  moduleName = "OrtcClientSwiftExample"
+                  urlString = "file:///Users/jcaixinha/Documents/ORTC_EXAMPLES/OrtcClientSwiftExample/OrtcClientSwiftExample/OrtcHandler.swift"
+                  timestampString = "433868470.583423"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
