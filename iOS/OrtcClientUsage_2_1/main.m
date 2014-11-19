@@ -1,17 +1,15 @@
 //
 //  main.m
-//  OrtcClientUsage_2_0
+//  OrtcClientUsage_2_1
 //
-//  Created by Rafael Cabral on 5/18/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Joao Caixinha on 19/11/14.
+//  Copyright (c) 2014 Realtime. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
 #import "AppDelegate.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

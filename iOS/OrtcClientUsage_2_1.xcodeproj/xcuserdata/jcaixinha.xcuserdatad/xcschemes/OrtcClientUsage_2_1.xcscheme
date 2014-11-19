@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+   LastUpgradeVersion = "0600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0299E63E15667A3300AFA253"
-               BuildableName = "OrtcClientUsage_2_0.app"
-               BlueprintName = "OrtcClientUsage_2_0"
-               ReferencedContainer = "container:OrtcClientUsage_2_0.xcodeproj">
+               BlueprintIdentifier = "57A540241A1D0AFF008853F7"
+               BuildableName = "OrtcClientUsage_2_1.app"
+               BlueprintName = "OrtcClientUsage_2_1"
+               ReferencedContainer = "container:OrtcClientUsage_2_1.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "57A5403D1A1D0B00008853F7"
+               BuildableName = "OrtcClientUsage_2_1Tests.xctest"
+               BlueprintName = "OrtcClientUsage_2_1Tests"
+               ReferencedContainer = "container:OrtcClientUsage_2_1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0299E65F15667A3300AFA253"
-               BuildableName = "OrtcClientUsage_2_0Tests.octest"
-               BlueprintName = "OrtcClientUsage_2_0Tests"
-               ReferencedContainer = "container:OrtcClientUsage_2_0.xcodeproj">
+               BlueprintIdentifier = "57A5403D1A1D0B00008853F7"
+               BuildableName = "OrtcClientUsage_2_1Tests.xctest"
+               BlueprintName = "OrtcClientUsage_2_1Tests"
+               ReferencedContainer = "container:OrtcClientUsage_2_1.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0299E63E15667A3300AFA253"
-            BuildableName = "OrtcClientUsage_2_0.app"
-            BlueprintName = "OrtcClientUsage_2_0"
-            ReferencedContainer = "container:OrtcClientUsage_2_0.xcodeproj">
+            BlueprintIdentifier = "57A540241A1D0AFF008853F7"
+            BuildableName = "OrtcClientUsage_2_1.app"
+            BlueprintName = "OrtcClientUsage_2_1"
+            ReferencedContainer = "container:OrtcClientUsage_2_1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -60,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0299E63E15667A3300AFA253"
-            BuildableName = "OrtcClientUsage_2_0.app"
-            BlueprintName = "OrtcClientUsage_2_0"
-            ReferencedContainer = "container:OrtcClientUsage_2_0.xcodeproj">
+            BlueprintIdentifier = "57A540241A1D0AFF008853F7"
+            BuildableName = "OrtcClientUsage_2_1.app"
+            BlueprintName = "OrtcClientUsage_2_1"
+            ReferencedContainer = "container:OrtcClientUsage_2_1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -78,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0299E63E15667A3300AFA253"
-            BuildableName = "OrtcClientUsage_2_0.app"
-            BlueprintName = "OrtcClientUsage_2_0"
-            ReferencedContainer = "container:OrtcClientUsage_2_0.xcodeproj">
+            BlueprintIdentifier = "57A540241A1D0AFF008853F7"
+            BuildableName = "OrtcClientUsage_2_1.app"
+            BlueprintName = "OrtcClientUsage_2_1"
+            ReferencedContainer = "container:OrtcClientUsage_2_1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

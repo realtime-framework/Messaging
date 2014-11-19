@@ -29,7 +29,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     // Log
     tvwLog.editable = NO;
     
@@ -37,7 +40,7 @@
     mainScrollView.layer.borderColor = [UIColor blackColor].CGColor;
     mainScrollView.layer.borderWidth = 1.0;
     [mainScrollView setScrollEnabled:YES];
-    [mainScrollView setContentSize:CGSizeMake(320, 355)];
+    [mainScrollView setContentSize:CGSizeMake(320, 400)];
     
     // Scroll View Tap
     UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
@@ -46,16 +49,17 @@
     
     // CheckBox
     chxIsCluster = [[MICheckBox alloc] initWithFrame:CGRectMake(225, 3, 150, 25)];
-	chxIsCluster.titleLabel.font = [UIFont systemFontOfSize:13];
+    chxIsCluster.titleLabel.font = [UIFont systemFontOfSize:13];
     chxIsCluster.isChecked = YES;
     [chxIsCluster setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	[chxIsCluster setTitle:@"Is Cluster" forState:UIControlStateNormal];
-	[mainScrollView addSubview:chxIsCluster];
+    [chxIsCluster setTitle:@"Is Cluster" forState:UIControlStateNormal];
+    [mainScrollView addSubview:chxIsCluster];
     
     utils = [Utils alloc];
     
     // Instantiate OrtcClient
     ortcClient = [OrtcClient ortcClientWithConfig:self];
+
 }
 
 - (void)viewDidUnload
