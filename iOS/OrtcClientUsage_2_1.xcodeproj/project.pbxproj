@@ -22,7 +22,7 @@
 		57A540721A1D0B8E008853F7 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A5406B1A1D0B8E008853F7 /* base64.c */; };
 		57A540731A1D0B8E008853F7 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A5406E1A1D0B8E008853F7 /* NSData+SRB64Additions.m */; };
 		57A540741A1D0B8E008853F7 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A540711A1D0B8E008853F7 /* SRWebSocket.m */; };
-		57A540761A1D0C88008853F7 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A540751A1D0C88008853F7 /* libicucore.dylib */; };
+		57A540801A1D296D008853F7 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A5407F1A1D296D008853F7 /* libicucore.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		57A5406F1A1D0B8E008853F7 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
 		57A540701A1D0B8E008853F7 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
 		57A540711A1D0B8E008853F7 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
-		57A540751A1D0C88008853F7 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		57A5407F1A1D296D008853F7 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A540761A1D0C88008853F7 /* libicucore.dylib in Frameworks */,
+				57A540801A1D296D008853F7 /* libicucore.dylib in Frameworks */,
 				57A540561A1D0B46008853F7 /* libOrtcClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,7 +90,6 @@
 		57A5401C1A1D0AFF008853F7 = {
 			isa = PBXGroup;
 			children = (
-				57A540751A1D0C88008853F7 /* libicucore.dylib */,
 				57A540271A1D0AFF008853F7 /* OrtcClientUsage_2_1 */,
 				57A540411A1D0B00008853F7 /* OrtcClientUsage_2_1Tests */,
 				57A540261A1D0AFF008853F7 /* Products */,
@@ -118,6 +117,7 @@
 				57A5404F1A1D0B17008853F7 /* OrtcClient */,
 				57A5404E1A1D0B0E008853F7 /* Utils */,
 				57A540351A1D0B00008853F7 /* Images.xcassets */,
+				57A5407F1A1D296D008853F7 /* libicucore.dylib */,
 				57A5406A1A1D0B8E008853F7 /* SocketRocket */,
 				57A540371A1D0B00008853F7 /* LaunchScreen.xib */,
 				57A540281A1D0AFF008853F7 /* Supporting Files */,
@@ -494,6 +494,7 @@
 				57A5404A1A1D0B00008853F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57A5404B1A1D0B00008853F7 /* Build configuration list for PBXNativeTarget "OrtcClientUsage_2_1Tests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +503,7 @@
 				57A5404D1A1D0B00008853F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
