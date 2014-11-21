@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *textSound;
 @property (weak, nonatomic) IBOutlet UITextField *textExtra;
 
+@property (weak, nonatomic) IBOutlet UIButton *button_send;
+@property (assign, readwrite, nonatomic)CGRect btFrame;
 
 - (IBAction)actionSendPushNotification:(id)sender;
 

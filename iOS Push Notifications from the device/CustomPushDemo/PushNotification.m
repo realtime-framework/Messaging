@@ -48,11 +48,24 @@
 
 - (void)didReciveHTTPsData:(NSDictionary*)data
 {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucess"
+                                                    message:@"PushNotification send"
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
     NSLog(@"%@", [data description]);
 }
 
 - (void)didReciveHTTPsError:(NSDictionary*)data
 {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message:[data objectForKey:@"message"]
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+
     NSLog(@"%@", [data description]);
 }
 

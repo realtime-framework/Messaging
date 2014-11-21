@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -148,7 +147,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hyL-SA-ROp">
                                 <rect key="frame" x="20" y="430" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.053097391103834046" green="0.10677317789165752" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Send pushNotification">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,6 +162,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="button_send" destination="hyL-SA-ROp" id="hR6-AK-rWm"/>
                         <outlet property="textAppKey" destination="wlh-pr-Dsk" id="clG-pG-TVd"/>
                         <outlet property="textBadge" destination="v0i-cm-3qT" id="9QD-yM-BJ8"/>
                         <outlet property="textChannel" destination="oQF-Xh-PB5" id="gCc-1x-Emw"/>

@@ -62,7 +62,7 @@
     @try {
         [[self class] jsonDictionaryFromString:response OnCompletion:^(NSDictionary *jsonDictionary, NSError *error) {
             
-            if ([jsonDictionary objectForKey:@"errorId"]) {
+            if ([jsonDictionary objectForKey:@"exception"]) {
                 [_delegate didReciveHTTPsError:jsonDictionary];
             }else
             {
