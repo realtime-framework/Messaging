@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:clipToPadding="false"
+    android:scaleType="centerCrop"
+    android:src="@drawable/ic_launcher">
+
+    <TextView
+        android:id="@+id/connectionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:background="#FFFFFF"
+        android:height="30dp"
+        android:text="@string/notConnectedLabel"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:width="200dp" />
+
+    <EditText
+        android:id="@+id/nickNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/marginTopNicknameInput"
+        android:layout_marginBottom="@dimen/marginBottomNicknameInput"
+        android:ems="10"
+        android:hint="@string/hintNameLabel"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:inputType="text">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/chatRooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nickNameInput"
+        android:layout_centerHorizontal="true"
+        android:text="@string/chatRoomsLabel" />
+
+</RelativeLayout>

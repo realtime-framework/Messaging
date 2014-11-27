@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/channelCell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/rowPadding" >
+
+    <TextView
+        android:id="@+id/channelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="@string/channelNameLabel"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/abc_text_size_large_material" />
+
+    <TextView
+        android:id="@+id/unRead"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/unreadLabel"
+        android:textColor="#FF0000"
+        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material" />
+
+ </TableRow>
