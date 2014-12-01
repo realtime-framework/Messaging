@@ -98,7 +98,7 @@ class Private:
             from urlparse import urlparse
             uri = urlparse(host)
             conn = httplib.HTTPConnection(uri.netloc, timeout=REST_TIMEOUT)
-            conn.request("GET", uri.path)
+            conn.request("GET", uri.path + "?" + uri.query)
             res = conn.getresponse()
             if res.status == 200:
                 rbody = re.search('"(.*)"', res.read()).group(0)
