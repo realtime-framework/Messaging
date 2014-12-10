@@ -25,11 +25,10 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <title>Hello World</title>
+        <title>Realtime cordova push</title>
     </head>
     <body>
-        <img src="img/realtime.png" alt="realtime logo" id="logo"/>
-        <h1>cordova push</h1>
+        <h1>Realtime cordova push</h1>
         <div class="app">
             <h2>Channel:</h2>
             <div id="subcribed" class="event listening">Not subscribed</div>
@@ -42,11 +41,15 @@
             <label value="Payload result" id="payload" class="event listening">Payload result</label>
             <br/>
             <input type="button" value="Clear push notifications" onclick="cancelNotifications()"/>
+            <br/>
+            <h2>Send Message:</h2>
+            <input type="text" id="channelMsg" />
+            <br/>
+            <input type="button" value="Send Message" onclick="sendMessage()"/>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/plugins/OrtcPlugin.js"></script>
-        <script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>
         <script type="text/javascript">
             
            app.initialize();
@@ -58,11 +61,11 @@
                    var OrtcPushPlugin = window.plugins.OrtcPushPlugin;
                    OrtcPushPlugin.log("Connecting");
                    
-                   OrtcPushPlugin.connect(['YLJ7kz', 'token', 'metadata', 'https://ortc-developers.realtime.co/server/ssl/2.1/'], function (){
+                   OrtcPushPlugin.connect({'appkey':'YLJ7kz', 'token':'appToken', 'metadata':'androidMetadata', 'url':'https://ortc-developers.realtime.co/server/ssl/2.1/'}, function (){
                                     OrtcPushPlugin.log("Connected: ");
                                     var channel = document.getElementById('channel');
                                     OrtcPushPlugin.log("Trying to subscribe: " + channel.value);
-                                    OrtcPushPlugin.subscribe(channel.value, function (){
+                                    OrtcPushPlugin.subscribe({'channel':channel.value}, function (){
                                                                var subcribed = document.getElementById('subcribed');
                                                                subcribed.innerHTML = "subscribed: " + channel.value;
                                                                OrtcPushPlugin.log("subscribed: " + channel.value);
@@ -83,14 +86,26 @@
             }
         };
         
+        function sendMessage()
+        {
+            if(window.plugins && window.plugins.OrtcPushPlugin){
+                var OrtcPushPlugin = window.plugins.OrtcPushPlugin;
+                var channelSend = document.getElementById('channel');
+                var messageSend = document.getElementById('channelMsg');
+                OrtcPushPlugin.send({'channel':channelSend.value,'message':messageSend.value});
+                
+            }
+        };
+        
         document.addEventListener("push-notification", function(notification){
-                                  window.plugins.OrtcPushPlugin.log("Push-Received  channel: " + notification.channel + " extra: " + notification.payload.extra);
+                                  window.plugins.OrtcPushPlugin.log("Push-Received  channel: " + notification.channel + " payload: " + notification.payload);
                                   var payload = document.getElementById('payload');
-                                  payload.innerHTML = "payload: " + notification.payload.extra;
-                                  payload.value = "payload: " + notification.payload.extra;
+                                  payload.innerHTML = JSON.stringify( notification.payload );
+                                  payload.value = JSON.stringify( notification.payload );
                                   }, false);
         
         
         </script>
     </body>
 </html>
+
