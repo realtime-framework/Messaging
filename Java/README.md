@@ -8,6 +8,12 @@ This sample app uses the Realtime® Framework Pub/Sub Java library to connect, s
 
 ![ScreenShot](http://ortc.xrtml.org/screenshots/2.1.0/Java/Screen.jpg)
 
+## Running the sample
+
+	mkdir bin
+    javac -d ./bin ./src/JavaTest/integration/IntegrationTest.java -cp ./libs/ortc-java-2.1.18.jar
+    java -cp ./libs/ortc-java-2.1.18.jar:./bin/ JavaTest.integration.IntegrationTest
+
 > NOTE: For simplicity these samples assume you're using a Realtime® Framework developers' application key with the authentication service disabled (every connection will have permission to publish and subscribe to any channel). For security guidelines please refer to the [Security Guide](http://messaging-public.realtime.co/documentation/starting-guide/security.html). 
 > 
 > **Don't forget to replace `YOUR_APPLICATION_KEY` and `YOUR_APPLICATION_PRIVATE_KEY` with your own application key. If you don't already own a free Realtime® Framework application key, [get one now](https://app.realtime.co/developers/getlicense).**
