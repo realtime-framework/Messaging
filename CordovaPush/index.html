@@ -61,7 +61,7 @@
                    var OrtcPushPlugin = window.plugins.OrtcPushPlugin;
                    OrtcPushPlugin.log("Connecting");
                    
-                   OrtcPushPlugin.connect({'appkey':'YLJ7kz', 'token':'appToken', 'metadata':'androidMetadata', 'url':'https://ortc-developers.realtime.co/server/ssl/2.1/'}, function (){
+                   OrtcPushPlugin.connect({'appkey':'your_app_key', 'token':'your_token', 'metadata':'your_metadata', 'url':'https://ortc-developers.realtime.co/server/ssl/2.1/','projectId':'your_google_project_id'}, function (){
                                     OrtcPushPlugin.log("Connected: ");
                                     var channel = document.getElementById('channel');
                                     OrtcPushPlugin.log("Trying to subscribe: " + channel.value);
