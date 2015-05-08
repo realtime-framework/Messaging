@@ -14,10 +14,10 @@ This sample app uses the Realtime® Framework Pub/Sub Appcelerator Titanium modu
 > **Don't forget to replace `YOUR_APPLICATION_KEY` and `YOUR_APPLICATION_PRIVATE_KEY` with your own application key. If you don't already own a free Realtime® Framework application key, [get one now](https://accounts.realtime.co/signup/).**
 
 
-## Appcelerator Marketplace module download
-You should download the Realtime® Framework Pub/Sub Appcelerator Titanium modules from the Appcelerator Marketplace using the following link:
+## Modules download
+You should download the Realtime® Framework Pub/Sub Appcelerator Titanium modules from the Realtime website using the following link:
 
-[**Easy pub/sub messaging for Realtime® Framework**](https://marketplace.appcelerator.com/apps/5539?69017729)
+[**Easy pub/sub messaging for Realtime® Framework**](http://messaging-public.realtime.co/api/download/titanium/realtime-messaging-titanium-modules.zip)
 
 >Appcelerator, Appcelerator Titanium and associated marks and logos are 
 trademarks of Appcelerator, Inc.
