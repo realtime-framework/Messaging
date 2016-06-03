@@ -243,6 +243,7 @@
 				TargetAttributes = {
 					57A540241A1D0AFF008853F7 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 9477759JH2;
 					};
 					57A5403D1A1D0B00008853F7 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -417,6 +418,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OrtcClientUsage_2_1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -431,6 +434,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OrtcClientUsage_2_1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
