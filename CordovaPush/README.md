@@ -9,7 +9,7 @@ How to build and run this sample using the Cordova CLI:
     2. cd [project-directory]
     3. cordova platform add android
     4. cordova platform add ios
-    5. cordova plugin add co.realtime.plugins.cordovapush
+    5. cordova plugin add cordovapush
     6. [replace index.html on the main www folder]
     7. cordova build
     8. cordova run android
