@@ -1,19 +1,20 @@
-# Realtime Messaging Cordova example for Push Notifications (iOS and Android)
+# Realtime Messaging Ionic example for Push Notifications (iOS and Android)
 
-This Cordova example and plugin should be used with the iOS/Android platforms together with the Realtime Messaging library (ORTC) for Push Notifications support.
+This Ionic example using the CordovaPush plugin should be used with the iOS/Android platforms together with the Realtime Messaging library (ORTC) for Push Notifications support.
 
-How to build and run this sample using the Cordova CLI:
+How to build and run this sample using the Ionic CLI:
 
 
-    1. cordova create [project-directory] [project-identifier] [project-name]
-    2. cd [project-directory]
-    3. cordova platform add android
-    4. cordova platform add ios
-    5. cordova plugin add co.realtime.plugins.cordovapush
-    6. [replace index.html on the main www folder]
-    7. cordova build
-    8. cordova run android
-    9. cordova run ios
+   	1. ionic start [project-name] [project-template]
+	2. cd [project-directory]
+	3. ionic platform add ios
+	4. ionic platform add android
+	5. cordova plugin add co.realtime.plugins.cordovapush
+	6. [replace index.html on the main www folder]
+	7. ionic build ios
+	8. ionic build android
+	9. ionic emulate ios
+	10. ionic emulate android
     
 Have fun pushing!
 
