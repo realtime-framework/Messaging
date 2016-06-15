@@ -9,7 +9,7 @@ How to build and run this sample using the Ionic CLI:
 	2. cd [project-directory]
 	3. ionic platform add ios
 	4. ionic platform add android
-	5. cordova plugin add co.realtime.plugins.cordovapush
+	5. cordova plugin add cordovapush
 	6. [replace index.html on the main www folder]
 	7. ionic build ios
 	8. ionic build android
