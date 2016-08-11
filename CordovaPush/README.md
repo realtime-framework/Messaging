@@ -11,9 +11,10 @@ How to build and run this sample using the Cordova CLI:
     4. cordova platform add ios
     5. cordova plugin add cordovapush
     6. [replace index.html on the main www folder]
-    7. cordova build
-    8. cordova run android
-    9. cordova run ios
+    7. [copy the images in folder icons to your project resources/android/ folder]
+    8. cordova build
+    9. cordova run android
+    10. cordova run ios
     
 Have fun pushing!
 

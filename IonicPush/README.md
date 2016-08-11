@@ -13,10 +13,10 @@ How to build and run this sample using the Ionic CLI:
 	6. [replace index.html on the main www folder]
 	7. [copy css/style.css to the main www/css folder]
 	8. [copy the images in folder icons to your project resources/android/ folder]
-	7. ionic build ios
-	8. ionic build android
-	9. ionic emulate ios
-	10. ionic emulate android
+	9. ionic build ios
+	10. ionic build android
+	11. ionic emulate ios
+	12. ionic emulate android
     
 Have fun pushing!
 
