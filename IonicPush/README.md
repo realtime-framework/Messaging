@@ -12,6 +12,7 @@ How to build and run this sample using the Ionic CLI:
 	5. cordova plugin add cordovapush
 	6. [replace index.html on the main www folder]
 	7. [copy css/style.css to the main www/css folder]
+	8. [copy the images in folder icons to your project resources/android/ folder]
 	7. ionic build ios
 	8. ionic build android
 	9. ionic emulate ios
